@@ -1,0 +1,27 @@
+include header.pug
+main.main.main-home 
+    section.form-section#form
+        .section-header(title="РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ") РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ
+        .section-container
+            include form.pug           
+    section.advertisment-section
+        img(src="./assets/images/content/bannerAdver.jpg", alt="")
+    section.banks-section
+        .section-header(title="Банки-Партнеры") Банки-Партнеры
+        .section-container
+    section.whyus-section
+        .section-header(title="ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?") ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?
+        .section-container
+    //- Для всяких квизов
+    section.attention-section
+        .section-container 
+    //- Форма для вопросов внизу
+    section.consultation-section 
+    section.feedback-section
+        .section-header(title="ОТЗЫВЫ НАШИХ КЛИЕНТОВ") ОТЗЫВЫ НАШИХ КЛИЕНТОВ
+        .section-container
+    section.company-section
+        .section-header(title="НЕМНОГО О НАШЕЙ КОМПАНИИ") НЕМНОГО О НАШЕЙ КОМПАНИИ
+        .section-container
+    section.map-section#contact
+include footer.pug
