@@ -88,13 +88,10 @@ HeadersArray.forEach(function (element) {
   menu.push(HeaderValue);
 });
 var swiper = new Swiper("#greetingSwipper", {
-  // fadeEffect: {
-  //     crossFade: true,
+  // navigation: {
+  //     nextEl: ".greeting-next",
+  //     prevEl: ".greeting-prev",
   // },
-  navigation: {
-    nextEl: ".greeting-next",
-    prevEl: ".greeting-prev"
-  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -103,18 +100,7 @@ var swiper = new Swiper("#greetingSwipper", {
       return readyElement;
     }
   },
-  // pagination: {
-  //     el: ".swiper-pagination",
-  //     type: "bullets",
-  //     clickable: true,
-  // },
   loop: true,
-  // autoplay: {
-  //   delay: 2300,
-  // },
-  // fadeEffect: {
-  //     crossFade: true,
-  // },
   effect: "fade",
   speed: 800,
   watchSlidesProgress: true,
