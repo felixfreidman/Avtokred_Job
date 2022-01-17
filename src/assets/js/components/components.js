@@ -5,7 +5,7 @@ HeadersArray.forEach((element) => {
     let HeaderValue = element.getAttribute("data-info");
     menu.push(HeaderValue);
 });
-let swiper = new Swiper("#greetingSwipper", {
+let swiperGreet = new Swiper("#greetingSwipper", {
     // navigation: {
     //     nextEl: ".greeting-next",
     //     prevEl: ".greeting-prev",
@@ -29,6 +29,20 @@ let swiper = new Swiper("#greetingSwipper", {
     watchSlidesProgress: true,
     watchVisibility: true,
     disableOnInteraction: true,
+});
+let swiperBanks = new Swiper("#banksSwiper", {
+    navigation: {
+        nextEl: ".button-bank--next",
+        prevEl: ".button-bank--prev",
+    },
+    pagination: {
+        el: ".banks-pagination",
+        clickable: true,
+    },
+    loop: true,
+    effect: "cards",
+    speed: 800,
+    slidesPerView: 3,
 });
 
 var TxtType = function(el, toRotate, period) {

@@ -9,6 +9,30 @@ main.main.main-home
     section.banks-section
         .section-header(title="Банки-Партнеры") Банки-Партнеры
         .section-container
+            .swiper.banks-swiper#banksSwiper 
+                .swiper-wrapper
+                    .swiper-slide.banks-slide
+                        .bank-card 
+                            img(src="./assets/images/content/slide1.png", alt="Slide Image")
+                            .card-container
+                                .bank-name Тинькоф
+                                .bank-description Пример
+                    .swiper-slide.banks-slide
+                        .bank-card 
+                            img(src="./assets/images/content/slide1.png", alt="Slide Image")
+                            .card-container
+                                .bank-name Тинькоф1123
+                                .bank-description Пример
+                    .swiper-slide.banks-slide
+                        .bank-card 
+                            img(src="./assets/images/content/slide1.png", alt="Slide Image")
+                            .card-container
+                                .bank-name Тинькоф1231312
+                                .bank-description Пример
+                .swiper-pagination.banks-pagination
+                .swiper-navigation.banks-navigation
+                    .swiper-button--prev.button-bank--prev
+                    .swiper-button--next.button-bank--next
     section.whyus-section
         .section-header(title="ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?") ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?
         .section-container

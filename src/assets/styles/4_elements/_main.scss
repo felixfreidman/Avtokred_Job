@@ -1,6 +1,7 @@
 body {
     font-family: "Montserrat";
     font-weight: 500;
+    overflow-x: hidden;
 }
 
 a {
@@ -216,6 +217,7 @@ a {
     border-radius: 22px;
     min-height: 600px;
     margin-bottom: 150px;
+    justify-content: center;
 }
 
 .swiper-pagination.home-pagination {
@@ -298,4 +300,88 @@ a {
 
 .section-header:hover:before {
     width: 100%;
+}
+
+// Banks Swiper
+.banks-swiper {
+    width: fit-content;
+    max-width: 80%;
+    height: fit-content;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+        height: 80%;
+    }
+    .banks-slide {
+        display: flex;
+        max-width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .banks-pagination {
+        display: flex;
+        .swiper-pagination-bullet {
+            width: 30px;
+            height: 10px;
+            background-color: rgba($color: #fff, $alpha: 0.6);
+            border-radius: 8px;
+        }
+    }
+    .swiper-navigation.banks-navigation {
+        right: 10px;
+        bottom: 0;
+    }
+}
+
+.bank-card {
+    background-color: rgba($color: #fff, $alpha: 1);
+    width: calc(100% - 80px);
+    max-width: 250px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 22px;
+    padding: 20px 40px;
+    position: relative;
+    justify-content: space-between;
+    img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 50%;
+        width: 80%;
+        .bank-name {
+            font-size: 40px;
+            font-weight: 700;
+            color: #0b1f35;
+            margin-bottom: 20px;
+        }
+        .bank-description {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0b1f35;
+        }
+    }
+    .card-container::before {
+        content: "";
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background-color: #0b1f35;
+    }
 }
