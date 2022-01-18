@@ -1,10 +1,9 @@
 {
     "name": "freidman",
-    "version": "1.0.0",
-    "description": "studio web site",
+    "version": "1.1.0",
+    "description": "Freidman BuildUp",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "build": "gulp build",
         "start": "npm run build"
     },
@@ -40,15 +39,12 @@
         "run-sequence": "^2.2.1",
         "vinyl-buffer": "^1.0.1"
     },
-    "browserslist": [
-        "last 2 versions",
-        "IE 11",
-        "Firefox ESR"
-    ],
     "dependencies": {
         "jquery": "^3.4.1",
         "jquery-mask-plugin": "^1.14.16",
         "swiper": "^4.5.0",
-        "@fancyapps/fancybox": "3.5.2"
+        "@fancyapps/fancybox": "3.5.2",
+        "jquery-ui": "^1.13.0",
+        "aos": "^2.3.4"
     }
 }

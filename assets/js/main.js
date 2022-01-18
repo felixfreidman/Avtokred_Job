@@ -1,19 +1,18 @@
 "use strict";
 
+/*
+@author: felixfreidman 
+@mail: felixfreidmandev@gmail.com
+@note: ищу работу
+*/
+// Временное решение деления на разряды, потом маска будет работать
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
+} // Работа меню и создания объекта для будущей передачи,
+// затем уже транпиляция на важные данные
+
 
 var allNextButtons = document.querySelectorAll(".form-navigation__button--next");
-var detailedFormObject = {
-  type: "",
-  credit: "",
-  time: "",
-  income: "",
-  invest: "",
-  userName: "",
-  userPhone: ""
-};
 allNextButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     var buttonId = button.id;
@@ -34,9 +33,9 @@ allNextButtons.forEach(function (button) {
     console.log(creditSum);
     detailedFormObject.credit = creditSum.toString();
     var creditTime = document.getElementById("timeInput").value;
-    detailedFormObject.time = creditTime.toString();
-    var userIncome = document.getElementById("incomeInput").value;
-    detailedFormObject.income = userIncome.toString();
+    detailedFormObject.time = creditTime.toString(); // const userIncome = document.getElementById("incomeInput").value;
+    // detailedFormObject.income = userIncome.toString();
+
     var creditInvest = document.getElementById("investInput").value;
     detailedFormObject.invest = creditInvest.toString();
     console.log(detailedFormObject);
@@ -54,13 +53,24 @@ allPrevButtons.forEach(function (button) {
     document.getElementById(buttonId).classList.toggle("screen--show");
   });
 });
+var detailedFormObject = {
+  type: "",
+  credit: "",
+  time: "",
+  // income: "",
+  invest: "",
+  userName: "",
+  userPhone: ""
+}; // Вариация формы для неопредленного пользователя
+
 var detailedButton = document.getElementById("detailedForm");
 detailedButton.addEventListener("click", function () {
   document.getElementById("firstScreen").classList.toggle("screen--hide");
   document.getElementById("firstScreen").classList.toggle("screen--show");
   document.getElementById("secondScreen").classList.toggle("screen--hide");
   document.getElementById("secondScreen").classList.toggle("screen--show");
-});
+}); // Верификация заполнения данных в форму
+
 var userNameInput = document.getElementById("userName");
 var userPhoneInput = document.getElementById("userPhone");
 $(document).ready(function () {
@@ -79,16 +89,31 @@ $(document).ready(function () {
       $(".submit-button").removeClass("form-navigation__button--disabled");
     }
   });
-});
+}); // БОЛЬШАЯ СЕКЦИЯ МЕНЮ =========================================
+// Работа с динамиеческим меню
+
 var workProccessButtonOpen = document.getElementById("workProccessButtonOpen");
+var workProccessButtonClose = document.getElementById("workProccessButtonClose");
+var banksButtonOpen = document.getElementById("banksButtonOpen");
+var banksButtonClose = document.getElementById("banksButtonClose");
+var verticalSmallContainer = document.getElementById("verticalSmallContainer");
+var verticalBigContainer = document.getElementById("verticalBigContainer");
+var basicMenuContainer = document.getElementById("basicMenuContainer");
+var aboutButtonClose = document.getElementById("aboutButtonClose"); // Секция для запуска событий по нажатию кнопок
+
 workProccessButtonOpen.addEventListener("click", function () {
   if (!workProccessButtonOpen.classList.contains("smallHorizontalExpanded")) workProccessButtonOpen.classList.add("smallHorizontalExpanded");
 });
-var banksButtonOpen = document.getElementById("banksButtonOpen");
 banksButtonOpen.addEventListener("click", function () {
   if (!banksButtonOpen.classList.contains("buttonExpandBig")) banksButtonOpen.classList.add("buttonExpandBig");
 });
-var banksButtonClose = document.getElementById("banksButtonClose");
+verticalSmallContainer.addEventListener("click", function () {
+  if (!verticalSmallContainer.classList.contains("containerSmallExpand")) {
+    verticalSmallContainer.classList.add("containerSmallExpand");
+    basicMenuContainer.classList.add("menuTransformed");
+    initAboutSwiper();
+  }
+});
 banksButtonClose.addEventListener("click", closeButton);
 
 function closeButton() {
@@ -99,17 +124,6 @@ function closeButtonDelay() {
   banksButtonOpen.classList.toggle("buttonExpandBig");
 }
 
-var verticalSmallContainer = document.getElementById("verticalSmallContainer");
-var verticalBigContainer = document.getElementById("verticalBigContainer");
-var basicMenuContainer = document.getElementById("basicMenuContainer");
-verticalSmallContainer.addEventListener("click", function () {
-  if (!verticalSmallContainer.classList.contains("containerSmallExpand")) {
-    verticalSmallContainer.classList.add("containerSmallExpand");
-    basicMenuContainer.classList.add("menuTransformed");
-    initAboutSwiper();
-  }
-});
-var aboutButtonClose = document.getElementById("aboutButtonClose");
 aboutButtonClose.addEventListener("click", closeButtonAbout);
 
 function closeButtonAbout() {
@@ -121,7 +135,6 @@ function closeButtonAboutDelay() {
   basicMenuContainer.classList.remove("menuTransformed");
 }
 
-var workProccessButtonClose = document.getElementById("workProccessButtonClose");
 workProccessButtonClose.addEventListener("click", closeButtonProcess);
 
 function closeButtonProcess() {
@@ -130,7 +143,9 @@ function closeButtonProcess() {
 
 function closeButtonProcessDelay() {
   workProccessButtonOpen.classList.toggle("smallHorizontalExpanded");
-}
+} // Надо будет потом иницировать свайперы
+// по запуску кнопки, чтобы они нормально верстались
+
 
 function initAboutSwiper() {
   var swiperAbout = new Swiper("#aboutSwiper", {
@@ -150,7 +165,15 @@ function initAboutSwiper() {
     effect: "cube",
     speed: 800
   });
-} // // header-swiper
+} // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
+
+/* 
+TODO: Документация к коду
+TODO: Дописать форму для определенного пользователя
+TODO: Инициализация яндекса
+*/
+// Хранилища дата-данных,
+//для удобного заполнения данных в свайперах
 
 
 var menu = [];
@@ -164,7 +187,8 @@ var companyPagesArray = document.querySelectorAll(".about-info");
 companyPagesArray.forEach(function (element) {
   var HeaderValue = element.getAttribute("data-info");
   menuCompany.push(HeaderValue);
-});
+}); // Свайперы, которые запускаются сразу
+
 var swiperGreet = new Swiper("#greetingSwipper", {
   // navigation: {
   //     nextEl: ".greeting-next",
@@ -198,7 +222,7 @@ var swiperBanks = new Swiper("#banksSwiper", {
   effect: "cards",
   speed: 800,
   slidesPerView: 6
-});
+}); // Автопечатание текста в главном свайпере
 
 var TxtType = function TxtType(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -259,11 +283,12 @@ window.onload = function () {
   css.type = "text/css";
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
   document.body.appendChild(css);
-};
+}; // Инициация АОСА для двигающего текста
+
 
 AOS.init({
   startEvent: "DOMContentLoaded"
-}); // Slider Section
+}); // Работаем со слайдерами в форме
 
 $(document).ready(function () {
   $("#sliderDebt").slider({
@@ -319,7 +344,6 @@ $(document).ready(function () {
   });
   $("#timeInput").val($("#sliderTime").slider("option", "value"));
   var timeValue = $("#timeInput").val();
-  console.log(timeValue);
 
   switch (timeValue) {
     default:

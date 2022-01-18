@@ -1,4 +1,5 @@
-// // header-swiper
+// Хранилища дата-данных,
+//для удобного заполнения данных в свайперах
 let menu = [];
 let HeadersArray = document.querySelectorAll(".attention-container__header");
 HeadersArray.forEach((element) => {
@@ -11,6 +12,7 @@ companyPagesArray.forEach((element) => {
     let HeaderValue = element.getAttribute("data-info");
     menuCompany.push(HeaderValue);
 });
+// Свайперы, которые запускаются сразу
 let swiperGreet = new Swiper("#greetingSwipper", {
     // navigation: {
     //     nextEl: ".greeting-next",
@@ -51,7 +53,7 @@ let swiperBanks = new Swiper("#banksSwiper", {
     slidesPerView: 6,
 });
 
-
+// Автопечатание текста в главном свайпере
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -110,12 +112,12 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
-
+// Инициация АОСА для двигающего текста
 AOS.init({
     startEvent: "DOMContentLoaded",
 });
 
-// Slider Section
+// Работаем со слайдерами в форме
 $(document).ready(function() {
     $("#sliderDebt").slider({
         range: "min",
@@ -164,7 +166,6 @@ $(document).ready(function() {
     });
     $("#timeInput").val($("#sliderTime").slider("option", "value"));
     let timeValue = $("#timeInput").val();
-    console.log(timeValue);
     switch (timeValue) {
         default: timeValue = `${timeValue} года`;
     }
