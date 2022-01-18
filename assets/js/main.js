@@ -87,7 +87,7 @@ HeadersArray.forEach(function (element) {
   var HeaderValue = element.getAttribute("data-info");
   menu.push(HeaderValue);
 });
-var swiper = new Swiper("#greetingSwipper", {
+var swiperGreet = new Swiper("#greetingSwipper", {
   // navigation: {
   //     nextEl: ".greeting-next",
   //     prevEl: ".greeting-prev",
@@ -106,6 +106,20 @@ var swiper = new Swiper("#greetingSwipper", {
   watchSlidesProgress: true,
   watchVisibility: true,
   disableOnInteraction: true
+});
+var swiperBanks = new Swiper("#banksSwiper", {
+  navigation: {
+    nextEl: ".button-bank--next",
+    prevEl: ".button-bank--prev"
+  },
+  pagination: {
+    el: ".banks-pagination",
+    clickable: true
+  },
+  loop: true,
+  effect: "cards",
+  speed: 800,
+  slidesPerView: 6
 });
 
 var TxtType = function TxtType(el, toRotate, period) {
