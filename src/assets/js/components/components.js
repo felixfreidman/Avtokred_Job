@@ -42,7 +42,7 @@ let swiperBanks = new Swiper("#banksSwiper", {
     loop: true,
     effect: "cards",
     speed: 800,
-    slidesPerView: 3,
+    slidesPerView: 6,
 });
 
 var TxtType = function(el, toRotate, period) {
