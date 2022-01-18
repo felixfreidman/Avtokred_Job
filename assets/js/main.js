@@ -79,13 +79,65 @@ $(document).ready(function () {
       $(".submit-button").removeClass("form-navigation__button--disabled");
     }
   });
-}); // // header-swiper
+});
+var banksButtonOpen = document.getElementById("banksButtonOpen");
+banksButtonOpen.addEventListener("click", function () {
+  if (!banksButtonOpen.classList.contains("buttonExpandBig")) banksButtonOpen.classList.add("buttonExpandBig");
+});
+var banksButtonClose = document.getElementById("banksButtonClose");
+banksButtonClose.addEventListener("click", closeButton);
+
+function closeButton() {
+  setTimeout(closeButtonDelay, 100);
+}
+
+function closeButtonDelay() {
+  banksButtonOpen.classList.toggle("buttonExpandBig");
+}
+
+var verticalSmallContainer = document.getElementById("verticalSmallContainer");
+var verticalBigContainer = document.getElementById("verticalBigContainer");
+var basicMenuContainer = document.getElementById("basicMenuContainer");
+verticalSmallContainer.addEventListener("click", function () {
+  if (!verticalSmallContainer.classList.contains("containerSmallExpand")) {
+    verticalSmallContainer.classList.add("containerSmallExpand");
+    basicMenuContainer.classList.add("menuTransformed");
+    initAboutSwiper();
+  }
+});
+
+function initAboutSwiper() {
+  var swiperAbout = new Swiper("#aboutSwiper", {
+    // navigation: {
+    //     nextEl: ".button-about--next",
+    //     prevEl: ".button-about--prev",
+    // },
+    pagination: {
+      el: ".about-pagination",
+      clickable: true,
+      renderBullet: function renderBullet(index, className) {
+        var readyElement = "\n            <div class = \"".concat(className, " bullet-special\">\n                <div class =\"bullet-header\">").concat(menuCompany[index], "</div>\n                <div class = \"\"></div>\n            </div>\n            ");
+        return readyElement;
+      }
+    },
+    loop: true,
+    effect: "cube",
+    speed: 800
+  });
+} // // header-swiper
+
 
 var menu = [];
 var HeadersArray = document.querySelectorAll(".attention-container__header");
 HeadersArray.forEach(function (element) {
   var HeaderValue = element.getAttribute("data-info");
   menu.push(HeaderValue);
+});
+var menuCompany = [];
+var companyPagesArray = document.querySelectorAll(".about-info");
+companyPagesArray.forEach(function (element) {
+  var HeaderValue = element.getAttribute("data-info");
+  menuCompany.push(HeaderValue);
 });
 var swiperGreet = new Swiper("#greetingSwipper", {
   // navigation: {

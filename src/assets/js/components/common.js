@@ -82,3 +82,57 @@ $(document).ready(function() {
         }
     });
 });
+
+const banksButtonOpen = document.getElementById("banksButtonOpen");
+banksButtonOpen.addEventListener("click", () => {
+    if (!banksButtonOpen.classList.contains("buttonExpandBig"))
+        banksButtonOpen.classList.add("buttonExpandBig");
+});
+const banksButtonClose = document.getElementById("banksButtonClose");
+banksButtonClose.addEventListener("click", closeButton);
+
+function closeButton() {
+    setTimeout(closeButtonDelay, 100);
+}
+
+function closeButtonDelay() {
+    banksButtonOpen.classList.toggle("buttonExpandBig");
+}
+
+const verticalSmallContainer = document.getElementById(
+    "verticalSmallContainer"
+);
+const verticalBigContainer = document.getElementById("verticalBigContainer");
+const basicMenuContainer = document.getElementById("basicMenuContainer");
+verticalSmallContainer.addEventListener("click", () => {
+    if (!verticalSmallContainer.classList.contains("containerSmallExpand")) {
+        verticalSmallContainer.classList.add("containerSmallExpand");
+        basicMenuContainer.classList.add("menuTransformed");
+        initAboutSwiper();
+    }
+});
+
+function initAboutSwiper() {
+    let swiperAbout = new Swiper("#aboutSwiper", {
+        // navigation: {
+        //     nextEl: ".button-about--next",
+        //     prevEl: ".button-about--prev",
+        // },
+        pagination: {
+            el: ".about-pagination",
+            clickable: true,
+            renderBullet: function(index, className) {
+                let readyElement = `
+            <div class = "${className} bullet-special">
+                <div class ="bullet-header">${menuCompany[index]}</div>
+                <div class = ""></div>
+            </div>
+            `;
+                return readyElement;
+            },
+        },
+        loop: true,
+        effect: "cube",
+        speed: 800,
+    });
+}

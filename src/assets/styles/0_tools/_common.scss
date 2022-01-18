@@ -1,7 +1,10 @@
 body {
     font-family: "Montserrat" !important;
     font-weight: 500;
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {

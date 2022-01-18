@@ -5,6 +5,12 @@ HeadersArray.forEach((element) => {
     let HeaderValue = element.getAttribute("data-info");
     menu.push(HeaderValue);
 });
+let menuCompany = [];
+let companyPagesArray = document.querySelectorAll(".about-info");
+companyPagesArray.forEach((element) => {
+    let HeaderValue = element.getAttribute("data-info");
+    menuCompany.push(HeaderValue);
+});
 let swiperGreet = new Swiper("#greetingSwipper", {
     // navigation: {
     //     nextEl: ".greeting-next",
@@ -44,6 +50,7 @@ let swiperBanks = new Swiper("#banksSwiper", {
     speed: 800,
     slidesPerView: 6,
 });
+
 
 var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate;

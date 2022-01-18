@@ -2,96 +2,181 @@ include header.pug
 main.main.main-home 
     section.form-section#form
         .section-header(title="РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ") РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ
-        .section-container
-            include form.pug           
+        .section-container.form-container
+            include form.pug  
+    .home-menu 
+        .menu-button.menu-button--banks#banksButtonOpen 
+            .button-header Банки-Партнеры
+            section.banks-section
+                //- .section-header(title="Банки-Партнеры") Банки-Партнеры
+                .section-container.bank-container
+                    .swiper.banks-swiper#banksSwiper 
+                        .swiper-wrapper
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/renesance.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/otpbank.png", alt="Slide Image")
+                                
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/sovcombank.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/gazprom.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/vtb.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/rosbank.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/setelem.png", alt="Slide Image")
+                                
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/locobank.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/real.png", alt="Slide Image")
+                                
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/kvant.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/ekspo.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/fast.png", alt="Slide Image")
+                                
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/orange.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/baykal.png", alt="Slide Image")
+                                    
+                            .swiper-slide.banks-slide
+                                .bank-card 
+                                    img(src="./assets/images/content/union.png", alt="Slide Image")
+
+                        .swiper-pagination.banks-pagination
+                        .swiper-navigation.banks-navigation
+                            .swiper-button--prev.button-bank--prev
+                            .swiper-button--next.button-bank--next
+            .button-close#banksButtonClose
+        .home-menu-container#basicMenuContainer
+            .menu-container--vertical--small#verticalSmallContainer
+                .menu-button.menu-button--about
+                    .button-header о компании
+                    section.about-section
+                        .about-container
+                            .swiper.about-swiper#aboutSwiper 
+                                .swiper-wrapper
+                                    .swiper-slide.about-slide
+                                        .about-card 
+                                            span(data-info="Сотрудники").about-info Сотрудники
+                                            .about-container 
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
+                                                    .man-name Феликс Фрейдман
+                                                    .man-job Программист
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
+                                                    .man-name Алексей Томсон
+                                                    .man-job Маркетолог
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
+                                                    .man-name Елена Раух
+                                                    .man-job SMM-Специалист
+                                    .swiper-slide.about-slide
+                                        .about-card 
+                                            span(data-info="Сотрудники").about-info Сотрудники
+                                            .about-container 
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
+                                                    .man-name Феликс Фрейдман
+                                                    .man-job Программист
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
+                                                    .man-name Алексей Томсон
+                                                    .man-job Маркетолог
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
+                                                    .man-name Елена Раух
+                                                    .man-job SMM-Специалист
+                                    .swiper-slide.about-slide
+                                        .about-card 
+                                            span(data-info="Сотрудники").about-info Сотрудники
+                                            .about-container 
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
+                                                    .man-name Феликс Фрейдман
+                                                    .man-job Программист
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
+                                                    .man-name Алексей Томсон
+                                                    .man-job Маркетолог
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
+                                                    .man-name Елена Раух
+                                                    .man-job SMM-Специалист
+                                    .swiper-slide.about-slide
+                                        .about-card 
+                                            span(data-info="Сотрудники").about-info Сотрудники
+                                            .about-container 
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
+                                                    .man-name Феликс Фрейдман
+                                                    .man-job Программист
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
+                                                    .man-name Алексей Томсон
+                                                    .man-job Маркетолог
+                                                .man-card 
+                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
+                                                    .man-name Елена Раух
+                                                    .man-job SMM-Специалист
+                                    
+                                    
+                                .swiper-pagination.about-pagination
+            .menu-container--vertical--big#verticalBigContainer 
+                .menu-button.menu-button--workproccess
+                    .button-header как мы работаем
+                .menu-button.menu-button--questions
+                    .button-header вопросы и ответы         
     section.advertisment-section
         img(src="./assets/images/content/bannerAdver.jpg", alt="")
-    section.banks-section
-        .section-header(title="Банки-Партнеры") Банки-Партнеры
-        .section-container.bank-container
-            .swiper.banks-swiper#banksSwiper 
-                .swiper-wrapper
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/renesance.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/otpbank.png", alt="Slide Image")
-                        
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/sovcombank.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/gazprom.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/vtb.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/tinkoff.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/rosbank.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/setelem.png", alt="Slide Image")
-                        
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/locobank.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/real.png", alt="Slide Image")
-                           
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/kvant.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/ekspo.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/fast.png", alt="Slide Image")
-                           
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/orange.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/baykal.png", alt="Slide Image")
-                            
-                    .swiper-slide.banks-slide
-                        .bank-card 
-                            img(src="./assets/images/content/union.png", alt="Slide Image")
-
-                .swiper-pagination.banks-pagination
-                .swiper-navigation.banks-navigation
-                    .swiper-button--prev.button-bank--prev
-                    .swiper-button--next.button-bank--next
+    
     section.whyus-section
-        .section-header(title="ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?") ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?
+        .section-header(title="КАК МЫ РАБОТАЕМ?") КАК МЫ РАБОТАЕМ?
         .section-container.whyus-container
             include whyus.pug
-    section.advertisment-section
-        img(src="./assets/images/content/bannerAdver.jpg", alt="")
-    //- Форма для вопросов внизу
-    section.consultation-section 
     section.feedback-section
         .section-header(title="ОТЗЫВЫ НАШИХ КЛИЕНТОВ") ОТЗЫВЫ НАШИХ КЛИЕНТОВ
         .section-container
     section.company-section
         .section-header(title="НЕМНОГО О НАШЕЙ КОМПАНИИ") НЕМНОГО О НАШЕЙ КОМПАНИИ
         .section-container
+    section.advertisment-section
+        img(src="./assets/images/content/bannerAdver.jpg", alt="")
+    //- Форма для вопросов внизу
+    section.consultation-section 
     section.map-section#contact
 include footer.pug
