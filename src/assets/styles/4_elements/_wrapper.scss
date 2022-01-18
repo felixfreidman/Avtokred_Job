@@ -6,7 +6,7 @@
     .menu-button {
         background: linear-gradient(135deg, #EECDA3, #EF629F);
         background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        animation: gradient 3s ease infinite;
         color: #fff;
         font-size: 36px;
         font-weight: 700;
@@ -19,9 +19,16 @@
         border-radius: 22px;
         transition: all 0.3s ease;
         overflow: hidden;
+        .button-close--about {
+            display: none;
+        }
+        .button-close--workprocess {
+            display: none;
+        }
         &:hover {
             transform: scale(1.05);
             cursor: pointer;
+            position: static;
         }
         .button-header {
             max-height: 275px;
@@ -44,7 +51,7 @@
     }
     .home-menu-container {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         min-height: 600px;
         width: 100%;
         margin-bottom: 150px;
@@ -74,13 +81,18 @@
                 align-items: center;
                 overflow: hidden;
                 flex-direction: row;
+                position: relative;
                 &:hover {
                     transform: none;
+                    cursor: default;
                 }
                 .button-header {
                     transform: rotate(-90deg);
                     width: 25%;
                     flex: 25% 0 0;
+                }
+                .button-close--about {
+                    display: block;
                 }
             }
         }
@@ -101,6 +113,7 @@
         align-items: center;
         overflow: hidden;
         flex-direction: row;
+        position: static;
         .button-header {
             transform: rotate(-90deg);
             width: 100%;
@@ -110,6 +123,24 @@
     .menu-button--workproccess {
         margin-bottom: 50px;
     }
+    .smallHorizontalExpanded {
+        position: relative;
+        &:hover {
+            transform: none;
+            position: relative;
+            cursor: default;
+        }
+        .button-close--workprocess {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+            left: 0px;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            cursor: pointer;
+        }
+    }
     .button-close {
         width: 40px;
         height: 40px;
@@ -118,5 +149,129 @@
         transform: rotate(45deg);
         margin-bottom: 50px;
         cursor: pointer;
+        &--about {
+            transform: rotate(-45deg);
+            margin-bottom: 0;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+        }
+    }
+}
+
+.menu-button--workproccess {
+    max-height: 275px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    .button-header {
+        height: 275px;
+        flex: 275px 0 0;
+    }
+}
+
+.smallHorizontalExpanded {
+    max-height: 1025px !important;
+}
+
+.workproccess-container {
+    height: 750px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .workstage-container {
+        height: 45%;
+        width: 40%;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: all 0.3s ease;
+        &:hover {
+            transform: scale(1.05)
+        }
+        // &--first {
+        //     margin-bottom: 100px;
+        //     &::after {
+        //         content: "";
+        //         position: absolute;
+        //         width: 50px;
+        //         height: 50px;
+        //         right: -40px;
+        //         top: 50%;
+        //         border-top: 3px solid #b20a2c;
+        //         border-right: 3px solid #b20a2c;
+        //         transform: rotate(45deg);
+        //     }
+        // }
+        // &--second {
+        //     margin-bottom: 100px;
+        //     &::after {
+        //         content: "";
+        //         position: absolute;
+        //         width: 50px;
+        //         height: 50px;
+        //         right: 0px;
+        //         left: 0px;
+        //         margin-right: auto;
+        //         margin-left: auto;
+        //         bottom: -60px;
+        //         border-bottom: 3px solid #b20a2c;
+        //         border-right: 3px solid #b20a2c;
+        //         transform: rotate(45deg);
+        //     }
+        // }
+        // &--third {
+        //     &::after {
+        //         content: "";
+        //         position: absolute;
+        //         width: 50px;
+        //         height: 50px;
+        //         left: -40px;
+        //         top: 50%;
+        //         border-top: 3px solid #b20a2c;
+        //         border-left: 3px solid #b20a2c;
+        //         transform: rotate(-45deg);
+        //     }
+        // }
+        .stage-graphics {
+            width: 100%;
+            height: 40%;
+            position: relative;
+            margin-bottom: 40px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .stage-number {
+                font-family: Georgia, 'Times New Roman', Times, serif !important;
+                font-weight: 700;
+                font-size: 24px;
+                background-color: #b20a2c;
+                color: #fff;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 30%;
+                right: 65%;
+                border-radius: 50%;
+            }
+        }
+        .stage-header {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: none;
+        }
+        .stage-subheader {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: none;
+        }
     }
 }

@@ -80,6 +80,10 @@ $(document).ready(function () {
     }
   });
 });
+var workProccessButtonOpen = document.getElementById("workProccessButtonOpen");
+workProccessButtonOpen.addEventListener("click", function () {
+  if (!workProccessButtonOpen.classList.contains("smallHorizontalExpanded")) workProccessButtonOpen.classList.add("smallHorizontalExpanded");
+});
 var banksButtonOpen = document.getElementById("banksButtonOpen");
 banksButtonOpen.addEventListener("click", function () {
   if (!banksButtonOpen.classList.contains("buttonExpandBig")) banksButtonOpen.classList.add("buttonExpandBig");
@@ -105,6 +109,28 @@ verticalSmallContainer.addEventListener("click", function () {
     initAboutSwiper();
   }
 });
+var aboutButtonClose = document.getElementById("aboutButtonClose");
+aboutButtonClose.addEventListener("click", closeButtonAbout);
+
+function closeButtonAbout() {
+  setTimeout(closeButtonAboutDelay, 100);
+}
+
+function closeButtonAboutDelay() {
+  verticalSmallContainer.classList.remove("containerSmallExpand");
+  basicMenuContainer.classList.remove("menuTransformed");
+}
+
+var workProccessButtonClose = document.getElementById("workProccessButtonClose");
+workProccessButtonClose.addEventListener("click", closeButtonProcess);
+
+function closeButtonProcess() {
+  setTimeout(closeButtonProcessDelay, 100);
+}
+
+function closeButtonProcessDelay() {
+  workProccessButtonOpen.classList.toggle("smallHorizontalExpanded");
+}
 
 function initAboutSwiper() {
   var swiperAbout = new Swiper("#aboutSwiper", {

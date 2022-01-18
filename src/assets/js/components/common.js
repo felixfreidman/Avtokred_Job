@@ -82,7 +82,13 @@ $(document).ready(function() {
         }
     });
 });
-
+const workProccessButtonOpen = document.getElementById(
+    "workProccessButtonOpen"
+);
+workProccessButtonOpen.addEventListener("click", () => {
+    if (!workProccessButtonOpen.classList.contains("smallHorizontalExpanded"))
+        workProccessButtonOpen.classList.add("smallHorizontalExpanded");
+});
 const banksButtonOpen = document.getElementById("banksButtonOpen");
 banksButtonOpen.addEventListener("click", () => {
     if (!banksButtonOpen.classList.contains("buttonExpandBig"))
@@ -111,6 +117,29 @@ verticalSmallContainer.addEventListener("click", () => {
         initAboutSwiper();
     }
 });
+const aboutButtonClose = document.getElementById("aboutButtonClose");
+aboutButtonClose.addEventListener("click", closeButtonAbout);
+
+function closeButtonAbout() {
+    setTimeout(closeButtonAboutDelay, 100);
+}
+
+function closeButtonAboutDelay() {
+    verticalSmallContainer.classList.remove("containerSmallExpand");
+    basicMenuContainer.classList.remove("menuTransformed");
+}
+const workProccessButtonClose = document.getElementById(
+    "workProccessButtonClose"
+);
+workProccessButtonClose.addEventListener("click", closeButtonProcess);
+
+function closeButtonProcess() {
+    setTimeout(closeButtonProcessDelay, 100);
+}
+
+function closeButtonProcessDelay() {
+    workProccessButtonOpen.classList.toggle("smallHorizontalExpanded");
+}
 
 function initAboutSwiper() {
     let swiperAbout = new Swiper("#aboutSwiper", {

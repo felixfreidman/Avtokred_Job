@@ -4,165 +4,45 @@ main.main.main-home
         .section-header(title="РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ") РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ
         .section-container.form-container
             include form.pug  
-    .home-menu 
-        .menu-button.menu-button--banks#banksButtonOpen 
-            .button-header Банки-Партнеры
-            section.banks-section
-                //- .section-header(title="Банки-Партнеры") Банки-Партнеры
-                .section-container.bank-container
-                    .swiper.banks-swiper#banksSwiper 
-                        .swiper-wrapper
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/renesance.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/otpbank.png", alt="Slide Image")
-                                
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/sovcombank.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/gazprom.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/vtb.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/tinkoff.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/rosbank.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/setelem.png", alt="Slide Image")
-                                
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/locobank.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/real.png", alt="Slide Image")
-                                
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/kvant.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/ekspo.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/fast.png", alt="Slide Image")
-                                
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/orange.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/baykal.png", alt="Slide Image")
-                                    
-                            .swiper-slide.banks-slide
-                                .bank-card 
-                                    img(src="./assets/images/content/union.png", alt="Slide Image")
-
-                        .swiper-pagination.banks-pagination
-                        .swiper-navigation.banks-navigation
-                            .swiper-button--prev.button-bank--prev
-                            .swiper-button--next.button-bank--next
-            .button-close#banksButtonClose
-        .home-menu-container#basicMenuContainer
-            .menu-container--vertical--small#verticalSmallContainer
-                .menu-button.menu-button--about
-                    .button-header о компании
-                    section.about-section
-                        .about-container
-                            .swiper.about-swiper#aboutSwiper 
-                                .swiper-wrapper
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Сотрудники").about-info Сотрудники
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Сотрудники").about-info Сотрудники
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Сотрудники").about-info Сотрудники
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Сотрудники").about-info Сотрудники
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    
-                                    
-                                .swiper-pagination.about-pagination
-            .menu-container--vertical--big#verticalBigContainer 
-                .menu-button.menu-button--workproccess
-                    .button-header как мы работаем
-                .menu-button.menu-button--questions
-                    .button-header вопросы и ответы         
     section.advertisment-section
         img(src="./assets/images/content/bannerAdver.jpg", alt="")
+    
+    .home-menu 
+        include menu-banks.pug
+        .home-menu-container#basicMenuContainer
+            .menu-container--vertical--small#verticalSmallContainer
+                include menu-about.pug
+            .menu-container--vertical--big#verticalBigContainer 
+                .menu-button.menu-button--workproccess#workProccessButtonOpen
+                    .button-header как мы работаем
+                    .workproccess-container
+                        .workstage-container.workstage-container--first
+                            .stage-graphics 
+                                img(src="./assets/images/content/firstStage.svg", alt="")
+                                .stage-number I
+                            .stage-header Подготавливаем и отправляем заявку сразу 10 банкам-партнерам в Иркутске
+                            .stage-subheader От вас нужен только паспорт и водительское удостоверение
+                        .workstage-container.workstage-container--second
+                            .stage-graphics 
+                                img(src="./assets/images/content/secondStage.svg", alt="")
+                                .stage-number II
+                            .stage-header Получаем решение банков в течение 1 часа и выбираем самое выгодное
+                            .stage-subheader Вы можете сами определить удобный ежемесячный платеж и срок кредитования
+                        .workstage-container
+                            .stage-graphics 
+                                img(src="./assets/images/content/fourthStage.svg", alt="")
+                                .stage-number IV
+                            .stage-header Составляем договор автокредитования
+                            .stage-subheader Вы получаете деньги и покупаете заинтересовавший вас автомобиль
+                        .workstage-container.workstage-container--third
+                            .stage-graphics 
+                                img(src="./assets/images/content/thirdStage.svg", alt="")
+                                .stage-number III
+                            .stage-header Проверяем интересующий вас автомобиль на юридическую чистоту, наличие залогов
+                            .stage-subheader Обязательно проверим и текущего владельца автомобиля
+                    .button-close.button-close--workprocess#workProccessButtonClose   
+                .menu-button.menu-button--questions
+                    .button-header вопросы и ответы         
     
     section.whyus-section
         .section-header(title="КАК МЫ РАБОТАЕМ?") КАК МЫ РАБОТАЕМ?

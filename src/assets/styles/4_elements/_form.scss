@@ -2,7 +2,8 @@
 .form-container {
     background: linear-gradient(135deg, #EECDA3, #EF629F);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 3s ease infinite;
+    // background-color: #b20a2c;
 }
 
 .application-form {
@@ -74,7 +75,7 @@
             box-shadow: 0 0 40px 10px rgba($color: #000, $alpha: 0.3);
         }
         &--yes {
-            background-color: #ff0505;
+            background-color: #b20a2c;
             color: #fff;
         }
         &--no {
@@ -112,7 +113,7 @@
     .form-navigation__button {
         width: 50px;
         height: 50px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         border-radius: 50%;
         position: relative;
         cursor: pointer;
@@ -166,7 +167,7 @@
 }
 
 .application-form__radio:checked+label {
-    border: 3px solid #ff0505;
+    border: 3px solid #b20a2c;
 }
 
 .navigation__progress-bar--basic {
@@ -177,7 +178,7 @@
         left: 0;
         width: 0%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -208,7 +209,7 @@
         left: 0;
         width: 20%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -239,7 +240,7 @@
         left: 0;
         width: 40%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -270,7 +271,7 @@
         left: 0;
         width: 60%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -301,7 +302,7 @@
         left: 0;
         width: 80%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -332,7 +333,7 @@
         left: 0;
         width: 95%;
         border-radius: 8px 0 0px 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -363,7 +364,7 @@
         left: 0;
         width: 100%;
         border-radius: 8px;
-        background-color: #ff0505;
+        background-color: #b20a2c;
         height: 40px;
     }
     &::before {
@@ -409,7 +410,7 @@
         border-radius: 22px;
         &::before {
             content: "";
-            background-color: rgba($color: #ff0505, $alpha: 0.6);
+            background-color: rgba($color: #b20a2c, $alpha: 0.6);
             transform: scale(0);
             width: 1px;
             height: 1px;
@@ -492,7 +493,7 @@
         outline: none;
     }
     .ui-slider-range {
-        background: linear-gradient(45deg, #ff0505, rgb(47, 47, 47));
+        background: linear-gradient(45deg, #b20a2c, rgb(47, 47, 47));
         background-size: 400% 400%;
         animation: gradient 5s ease infinite;
     }
@@ -533,7 +534,7 @@
         outline: none;
         width: fit-content;
         border-radius: 8px;
-        border: 2px solid #ff0505;
+        border: 2px solid #b20a2c;
         margin-top: 10px;
         &::placeholder {
             font-size: 16px;
@@ -545,7 +546,7 @@
     padding: 15px 30px;
     font-size: 24px;
     font-weight: 500;
-    background-color: #ff0505;
+    background-color: #b20a2c;
     color: #fff;
     outline: none;
     border: none;
