@@ -73,17 +73,18 @@ main.main.main-home
                             
                     .swiper-slide.banks-slide
                         .bank-card 
-                            img(src="./assets/images/content/union.png", alt="Slide Image")9                    
+                            img(src="./assets/images/content/union.png", alt="Slide Image")
+
                 .swiper-pagination.banks-pagination
                 .swiper-navigation.banks-navigation
                     .swiper-button--prev.button-bank--prev
                     .swiper-button--next.button-bank--next
     section.whyus-section
         .section-header(title="ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?") ПОЧЕМУ СТОИТ ОБРАТИТЬСЯ ИМЕННО К НАМ?
-        .section-container
-    //- Для всяких квизов
-    section.attention-section
-        .section-container 
+        .section-container.whyus-container
+            include whyus.pug
+    section.advertisment-section
+        img(src="./assets/images/content/bannerAdver.jpg", alt="")
     //- Форма для вопросов внизу
     section.consultation-section 
     section.feedback-section
