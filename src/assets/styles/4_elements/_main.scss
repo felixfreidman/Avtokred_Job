@@ -1,14 +1,4 @@
-body {
-    font-family: "Montserrat";
-    font-weight: 500;
-    overflow-x: hidden;
-}
-
-a {
-    color: #000;
-    text-decoration: none;
-}
-
+// Greeting Slider
 .greeting-swiper {
     width: 100vw;
     height: 100%;
@@ -150,22 +140,7 @@ a {
     justify-content: space-between;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.typewrite {
-    display: inline;
-}
-
+// Main Page Layout
 .main-home {
     display: flex;
     flex-direction: column;
@@ -218,6 +193,29 @@ a {
     min-height: 600px;
     margin-bottom: 150px;
     justify-content: center;
+}
+
+.section-header {
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1.5em;
+    position: relative;
+}
+
+.section-header::before {
+    content: attr(title);
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1.5em;
+    overflow: hidden;
+    color: red;
+    transition: all 0.3s linear;
+}
+
+.section-header:hover:before {
+    width: 100%;
 }
 
 .swiper-pagination.home-pagination {
@@ -279,30 +277,7 @@ a {
     }
 }
 
-.section-header {
-    cursor: pointer;
-    overflow: hidden;
-    display: inline-block;
-    line-height: 1.5em;
-    position: relative;
-}
-
-.section-header::before {
-    content: attr(title);
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 1.5em;
-    overflow: hidden;
-    color: red;
-    transition: all 0.3s linear;
-}
-
-.section-header:hover:before {
-    width: 100%;
-}
-
-// Banks Swiper
+// Banks Section and Swiper
 .banks-swiper {
     width: fit-content;
     max-width: 85%;
