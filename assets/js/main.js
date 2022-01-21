@@ -203,20 +203,29 @@ function initQuestionSwiper() {
 } // Функция для получения данных от слайдов для рендера кнопок
 
 
-console.log("Loh");
 var questionHeaders = [];
 var questionHeaderArray = document.querySelectorAll(".question-slide");
 questionHeaderArray.forEach(function (element) {
   var SlideInfoHeader = element.getAttribute("data-question-header");
   questionHeaders.push(SlideInfoHeader);
 });
-console.log(questionHeaderArray);
 var questionImages = [];
 var questionImageArray = document.querySelectorAll(".question-slide");
 questionImageArray.forEach(function (element) {
   var SlideInfoImage = element.getAttribute("data-question-image");
   questionImages.push(SlideInfoImage);
 }); // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
+// МОБИЛЬНОЕ МЕНЮ =========================================
+
+var mobileHeaderBtn = document.getElementById("showMenu");
+var mobileHeaderLayer = document.getElementById("headerLayer");
+mobileHeaderBtn.addEventListener("click", toggleHeaderMenu);
+mobileHeaderLayer.addEventListener("click", toggleHeaderMenu);
+
+function toggleHeaderMenu() {
+  mobileHeaderLayer.classList.toggle("btn-clicked--show");
+  mobileHeaderBtn.classList.toggle("header-btn--clicked");
+} // ========================================= МОБИЛЬНОЕ МЕНЮ
 
 /* 
 TODO: Документация к коду
@@ -225,6 +234,7 @@ TODO: Инициализация яндекса
 */
 // Хранилища дата-данных,
 //для удобного заполнения данных в свайперах
+
 
 var menu = [];
 var HeadersArray = document.querySelectorAll(".attention-container__header");
@@ -271,7 +281,18 @@ var swiperBanks = new Swiper("#banksSwiper", {
   loop: true,
   effect: "cards",
   speed: 800,
-  slidesPerView: 6
+  slidesPerView: 6,
+  breakpoints: {
+    920: {
+      slidesPerView: 4
+    },
+    600: {
+      slidesPerView: 3
+    },
+    450: {
+      slidesPerView: 2
+    }
+  }
 }); // Автопечатание текста в главном свайпере
 
 var TxtType = function TxtType(el, toRotate, period) {

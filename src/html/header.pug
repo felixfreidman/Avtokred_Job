@@ -25,46 +25,30 @@ html(lang="en")
                                 img(src="./assets/images/content/vk.svg", alt="VK Logo")
                             a(href="https://instagram.com/freidman.creator").social-link 
                                 img(src="./assets/images/content/instagram.svg", alt="Instagram Logo", style="width: 80%")
-            .swiper.greeting-swiper#greetingSwipper
-                .swiper-wrapper
-                    .swiper-slide.greeting-basic
-                        .greeting-slide 
-                            .attention-container 
-                                .attention-container__header(data-info="Кредит на покупку легкового автомобиля") Кредит на покупку 
-                                    .typewrite(data-period="2000",data-type='["легкового автомобиля"]')
-                                .attention-container-row 
-                                    a(href="#banks").attention-container__button--expand Подробнее
-                                    a(href="#form").attention-container__button--apply Заполнить форму
-                            img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
-                    .swiper-slide.greeting-basic
-                            .greeting-slide 
-                                .attention-container 
-                                    .attention-container__header(data-info="Кредит на покупку специальной техники") Кредит на покупку 
-                                        .typewrite(data-period="2000",data-type='["специальной техники"]')
-                                    .attention-container-row 
-                                        a(href="#banks").attention-container__button--expand Подробнее
-                                        a(href="#form").attention-container__button--apply Заполнить форму
-                                img(src="./assets/images/content/slide2Car.png", alt="").greeting-image
-                    .swiper-slide.greeting-basic
-                            .greeting-slide 
-                                .attention-container 
-                                    .attention-container__header(data-info="Подбор автомобилей под ваши нужды") Подбор автомобилей под
-                                        .typewrite(data-period="2000",data-type='[" ваши нужды"]')
-                                    .attention-container-row 
-                                        a(href="#banks").attention-container__button--expand Подробнее
-                                        a(href="#form").attention-container__button--apply Заполнить форму
-                                img(src="./assets/images/content/slide3Car.png", alt="").greeting-image
-                    .swiper-slide.greeting-basic
-                            .greeting-slide 
-                                .attention-container 
-                                    .attention-container__header(data-info="Сотрудничество") Приглашаем к сотрудничеству 
-                                        .typewrite(data-period="2000",data-type='["ценных партнеров"]')
-                                    .attention-container-row 
-                                        a(href="#banks").attention-container__button--expand Подробнее
-                                        a(href="#form").attention-container__button--apply Заполнить форму
-                                img(src="./assets/images/content/slide4Car.png", alt="").greeting-image
+            .header-btn--mobile#showMenu
+                .addon-container
+                    span.btn-pattern--line#firstLineMobile 
+                    span.btn-pattern--line#secondLineMobile 
+            .header-layer--mobile#headerLayer
+                .header-menu--mobile
+                    .mobile__container
+                        .mobile__logo 
+                            img(src="./assets/images/content/logo2.svg", alt="") 
+                        .mobile__city-chosen Иркутск
+                    .mobile__navigation
+                        a.header-link(href="#form") Оформить кредит
+                        a.header-link(href="#") Клиенту
+                        a.header-link(href="#") О Компании
+                        a.header-link(href="#contacts") Контакты 
+                    .mobile__separator-line 
+                    .header-contact-info
+                        a.header-phone(href="tel:+78006002515") 8 800 600-25-15 
+                        .header-social 
+                            a(href="https://vk.com/felixfreidman").social-link 
+                                img(src="./assets/images/content/vk.svg", alt="VK Logo")
+                            a(href="https://instagram.com/freidman.creator").social-link 
+                                img(src="./assets/images/content/instagram.svg", alt="Instagram Logo", style="width: 80%")
                     
-                //- .swiper-navigation 
-                //-     .swiper-button--prev.greeting-prev
-                //-     .swiper-button--next.greeting-next
-                .swiper-pagination.home-pagination
+            include greeting-section.pug
+            
+                

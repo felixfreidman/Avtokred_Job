@@ -223,14 +223,12 @@ function initQuestionSwiper() {
 }
 // Функция для получения данных от слайдов для рендера кнопок
 
-console.log("Loh");
 let questionHeaders = [];
 let questionHeaderArray = document.querySelectorAll(".question-slide");
 questionHeaderArray.forEach((element) => {
     let SlideInfoHeader = element.getAttribute("data-question-header");
     questionHeaders.push(SlideInfoHeader);
 });
-console.log(questionHeaderArray);
 let questionImages = [];
 let questionImageArray = document.querySelectorAll(".question-slide");
 questionImageArray.forEach((element) => {
@@ -239,6 +237,17 @@ questionImageArray.forEach((element) => {
 });
 
 // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
+// МОБИЛЬНОЕ МЕНЮ =========================================
+const mobileHeaderBtn = document.getElementById("showMenu");
+const mobileHeaderLayer = document.getElementById("headerLayer");
+mobileHeaderBtn.addEventListener("click", toggleHeaderMenu);
+mobileHeaderLayer.addEventListener("click", toggleHeaderMenu);
+
+function toggleHeaderMenu() {
+    mobileHeaderLayer.classList.toggle("btn-clicked--show");
+    mobileHeaderBtn.classList.toggle("header-btn--clicked");
+}
+// ========================================= МОБИЛЬНОЕ МЕНЮ
 
 /* 
 TODO: Документация к коду

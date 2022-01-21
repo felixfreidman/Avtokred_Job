@@ -51,6 +51,17 @@ let swiperBanks = new Swiper("#banksSwiper", {
     effect: "cards",
     speed: 800,
     slidesPerView: 6,
+    breakpoints: {
+        920: {
+            slidesPerView: 4,
+        },
+        600: {
+            slidesPerView: 3,
+        },
+        450: {
+            slidesPerView: 2,
+        },
+    },
 });
 
 // Автопечатание текста в главном свайпере
