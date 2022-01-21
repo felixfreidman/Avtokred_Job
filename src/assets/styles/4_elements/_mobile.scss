@@ -1,0 +1,88 @@
+@media screen and (max-width:1300px) {
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active .bullet-header {
+        font-size: 14px;
+        width: 90%;
+    }
+    .swiper-pagination.home-pagination .bullet-header {
+        font-size: 14px;
+        width: 90%;
+    }
+    .home-menu .menu-button .button-header {
+        font-size: 26px;
+    }
+    .question-swiper .question-pagination .swiper-pagination-bullet .question-header {
+        font-size: 16px;
+        width: 70%;
+    }
+    .question-swiper .question-slide .question-caption .question-caption__header {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .application-table .application-table__option {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+    .application-form__radio:checked+label {
+        border: 2px solid #ff0505;
+    }
+    .header .header-navigation .header-link {
+        font-size: 17px;
+    }
+    .question-swiper .question-slide .question-caption .question-caption__content {
+        font-size: 14px;
+    }
+    .question-swiper .question-slide .question-caption .question-caption__content .caption-paragraph {
+        line-height: 20px;
+    }
+    .bank-card {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .header .header-navigation .header-link {
+        font-size: 14px;
+    }
+    .header {
+        width: 85%;
+        .header-container {
+            width: 70%;
+        }
+    }
+    .question-swiper .question-slide .question-caption .question-caption__header {
+        font-size: 22px;
+    }
+    .about-container .about-swiper .swiper-pagination.about-pagination .swiper-pagination-bullet-active .bullet-header,
+    .about-container .about-swiper .swiper-pagination.about-pagination .bullet-header {
+        font-size: 14px;
+    }
+    .greeting-slide .attention-container__header {
+        font-size: 30px;
+    }
+    .application-form .form-screen,
+    .application-form .form-screen.third-screen {
+        width: calc(80% - 120px);
+    }
+    .home-menu {
+        .menu-button--banks {
+            max-height: 200px;
+            .button-header {
+                max-height: 200px !important;
+                flex: 200px 0 0 !important;
+            }
+        }
+        .buttonExpandBig {
+            max-height: 875px;
+        }
+        .button-close {
+            margin-bottom: 25px;
+            margin-top: 25px;
+        }
+        .smallHorizontalExpanded .button-close--workprocess {
+            top: 25px;
+        }
+    }
+}
