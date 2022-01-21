@@ -14,77 +14,152 @@ main.main.main-home
                 include menu-about.pug
             .menu-container--vertical--big#verticalBigContainer 
                 include menu-workproc.pug
-                .menu-button.menu-button--questions
+                .menu-button.menu-button--questions#questionButtonOpen
                     .button-header вопросы и ответы
-                    .swiper.about-swiper#aboutSwiper 
-                                .swiper-wrapper
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Сотрудники").about-info Сотрудники
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Офисы").about-info Офисы
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="Продукты").about-info Продукты
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    .swiper-slide.about-slide
-                                        .about-card 
-                                            span(data-info="История").about-info История
-                                            .about-container 
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain.jpg")
-                                                    .man-name Феликс Фрейдман
-                                                    .man-job Программист
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMain2.jpg")
-                                                    .man-name Алексей Томсон
-                                                    .man-job Маркетолог
-                                                .man-card 
-                                                    img.man-photo(src="./assets/images/content/imageMainDark.jpg")
-                                                    .man-name Елена Раух
-                                                    .man-job SMM-Специалист
-                                    
-                                    
-                                .swiper-pagination.about-pagination
+                    .button-close.button-close--workprocess#questionButtonClose
+                    .swiper.question-swiper#questionSwiper 
+                            .swiper-wrapper
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками.  
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
+                                        .question-caption__content 
+                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
+                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
+                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
+                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                            
+                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
+                                    .question-video 
+                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
+                                    .question-caption 
+                                        .question-caption__header Какая у вас процентная ставка?
+                                        .question-caption__content
+                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
+                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
+                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
+                            .swiper-pagination.question-pagination
     section.advertisment-section
         img(src="./assets/images/content/bannerAdver.jpg", alt="")
     //- Форма для вопросов внизу

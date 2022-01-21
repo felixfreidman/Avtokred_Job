@@ -97,6 +97,8 @@ const workProccessButtonOpen = document.getElementById(
 const workProccessButtonClose = document.getElementById(
     "workProccessButtonClose"
 );
+const questionButtonOpen = document.getElementById("questionButtonOpen");
+const questionButtonClose = document.getElementById("questionButtonClose");
 const banksButtonOpen = document.getElementById("banksButtonOpen");
 const banksButtonClose = document.getElementById("banksButtonClose");
 const verticalSmallContainer = document.getElementById(
@@ -109,6 +111,12 @@ const aboutButtonClose = document.getElementById("aboutButtonClose");
 workProccessButtonOpen.addEventListener("click", () => {
     if (!workProccessButtonOpen.classList.contains("smallHorizontalExpanded"))
         workProccessButtonOpen.classList.add("smallHorizontalExpanded");
+});
+questionButtonOpen.addEventListener("click", () => {
+    if (!questionButtonOpen.classList.contains("smallHorizontalExpanded")) {
+        questionButtonOpen.classList.add("smallHorizontalExpanded");
+        setTimeout(initQuestionSwiper, 300);
+    }
 });
 
 banksButtonOpen.addEventListener("click", () => {
@@ -153,6 +161,16 @@ function closeButtonProcess() {
 function closeButtonProcessDelay() {
     workProccessButtonOpen.classList.toggle("smallHorizontalExpanded");
 }
+
+questionButtonClose.addEventListener("click", closeButtonQuestion);
+
+function closeButtonQuestion() {
+    setTimeout(closeButtonQuestionDelay, 100);
+}
+
+function closeButtonQuestionDelay() {
+    questionButtonOpen.classList.toggle("smallHorizontalExpanded");
+}
 // Надо будет потом иницировать свайперы
 // по запуску кнопки, чтобы они нормально верстались
 function initAboutSwiper() {
@@ -179,6 +197,46 @@ function initAboutSwiper() {
         speed: 800,
     });
 }
+
+function initQuestionSwiper() {
+    let swiperQuestion = new Swiper("#questionSwiper", {
+        pagination: {
+            el: ".question-pagination",
+            clickable: true,
+            renderBullet: function(index) {
+                let readyElement = `
+            <div class = "swiper-pagination-bullet">
+                <div class = "question-image">
+                <img src = "${questionImages[index]}"/>
+                </div>
+                <div class = "question-header">${questionHeaders[index]}</div>
+            </div>
+            `;
+                return readyElement;
+            },
+        },
+        loop: true,
+        effect: "fade",
+        speed: 800,
+        direction: "vertical",
+    });
+}
+// Функция для получения данных от слайдов для рендера кнопок
+
+console.log("Loh");
+let questionHeaders = [];
+let questionHeaderArray = document.querySelectorAll(".question-slide");
+questionHeaderArray.forEach((element) => {
+    let SlideInfoHeader = element.getAttribute("data-question-header");
+    questionHeaders.push(SlideInfoHeader);
+});
+console.log(questionHeaderArray);
+let questionImages = [];
+let questionImageArray = document.querySelectorAll(".question-slide");
+questionImageArray.forEach((element) => {
+    let SlideInfoImage = element.getAttribute("data-question-image");
+    questionImages.push(SlideInfoImage);
+});
 
 // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
 

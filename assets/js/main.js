@@ -94,6 +94,8 @@ $(document).ready(function () {
 
 var workProccessButtonOpen = document.getElementById("workProccessButtonOpen");
 var workProccessButtonClose = document.getElementById("workProccessButtonClose");
+var questionButtonOpen = document.getElementById("questionButtonOpen");
+var questionButtonClose = document.getElementById("questionButtonClose");
 var banksButtonOpen = document.getElementById("banksButtonOpen");
 var banksButtonClose = document.getElementById("banksButtonClose");
 var verticalSmallContainer = document.getElementById("verticalSmallContainer");
@@ -103,6 +105,12 @@ var aboutButtonClose = document.getElementById("aboutButtonClose"); // Секц�
 
 workProccessButtonOpen.addEventListener("click", function () {
   if (!workProccessButtonOpen.classList.contains("smallHorizontalExpanded")) workProccessButtonOpen.classList.add("smallHorizontalExpanded");
+});
+questionButtonOpen.addEventListener("click", function () {
+  if (!questionButtonOpen.classList.contains("smallHorizontalExpanded")) {
+    questionButtonOpen.classList.add("smallHorizontalExpanded");
+    setTimeout(initQuestionSwiper, 300);
+  }
 });
 banksButtonOpen.addEventListener("click", function () {
   if (!banksButtonOpen.classList.contains("buttonExpandBig")) banksButtonOpen.classList.add("buttonExpandBig");
@@ -143,6 +151,16 @@ function closeButtonProcess() {
 
 function closeButtonProcessDelay() {
   workProccessButtonOpen.classList.toggle("smallHorizontalExpanded");
+}
+
+questionButtonClose.addEventListener("click", closeButtonQuestion);
+
+function closeButtonQuestion() {
+  setTimeout(closeButtonQuestionDelay, 100);
+}
+
+function closeButtonQuestionDelay() {
+  questionButtonOpen.classList.toggle("smallHorizontalExpanded");
 } // Надо будет потом иницировать свайперы
 // по запуску кнопки, чтобы они нормально верстались
 
@@ -165,7 +183,40 @@ function initAboutSwiper() {
     effect: "cube",
     speed: 800
   });
-} // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
+}
+
+function initQuestionSwiper() {
+  var swiperQuestion = new Swiper("#questionSwiper", {
+    pagination: {
+      el: ".question-pagination",
+      clickable: true,
+      renderBullet: function renderBullet(index) {
+        var readyElement = "\n            <div class = \"swiper-pagination-bullet\">\n                <div class = \"question-image\">\n                <img src = \"".concat(questionImages[index], "\"/>\n                </div>\n                <div class = \"question-header\">").concat(questionHeaders[index], "</div>\n            </div>\n            ");
+        return readyElement;
+      }
+    },
+    loop: true,
+    effect: "fade",
+    speed: 800,
+    direction: "vertical"
+  });
+} // Функция для получения данных от слайдов для рендера кнопок
+
+
+console.log("Loh");
+var questionHeaders = [];
+var questionHeaderArray = document.querySelectorAll(".question-slide");
+questionHeaderArray.forEach(function (element) {
+  var SlideInfoHeader = element.getAttribute("data-question-header");
+  questionHeaders.push(SlideInfoHeader);
+});
+console.log(questionHeaderArray);
+var questionImages = [];
+var questionImageArray = document.querySelectorAll(".question-slide");
+questionImageArray.forEach(function (element) {
+  var SlideInfoImage = element.getAttribute("data-question-image");
+  questionImages.push(SlideInfoImage);
+}); // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
 
 /* 
 TODO: Документация к коду
@@ -174,7 +225,6 @@ TODO: Инициализация яндекса
 */
 // Хранилища дата-данных,
 //для удобного заполнения данных в свайперах
-
 
 var menu = [];
 var HeadersArray = document.querySelectorAll(".attention-container__header");
