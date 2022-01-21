@@ -1,9 +1,10 @@
 // only form layout
 .form-container {
-    background: linear-gradient(135deg, #EECDA3, #EF629F);
-    background-size: 400% 400%;
-    animation: gradient 3s ease infinite;
+    // background: linear-gradient(135deg, #EECDA3, #EF629F);
+    // background-size: 400% 400%;
+    // animation: gradient 3s ease infinite;
     // background-color: #b20a2c;
+    background: linear-gradient(180deg, #b20a2c, #ffcc00);
 }
 
 .application-form {
@@ -28,7 +29,7 @@
         align-items: center;
         min-height: 370px;
         height: fit-content;
-        border-radius: 22px;
+        // border-radius: 22px;
         position: relative;
     }
     .form-screen.third-screen {
@@ -40,7 +41,7 @@
         align-items: flex-start;
         min-height: 370px;
         height: fit-content;
-        border-radius: 22px;
+        // border-radius: 22px;
         position: relative;
     }
     .screen-header {
@@ -60,7 +61,7 @@
     }
     .application-button {
         width: 60%;
-        border-radius: 8px;
+        // border-radius: 8px;
         padding: 20px 40px;
         font-size: 28px;
         font-weight: 700;
@@ -75,7 +76,7 @@
             box-shadow: 0 0 40px 10px rgba($color: #000, $alpha: 0.3);
         }
         &--yes {
-            background-color: #b20a2c;
+            background-color: #ff0505;
             color: #fff;
         }
         &--no {
@@ -93,7 +94,7 @@
             width: 100%;
             background: rgba($color: #0b1f35, $alpha: 0.1);
             height: 40px;
-            border-radius: 8px;
+            // border-radius: 8px;
             position: relative;
         }
     }
@@ -113,8 +114,8 @@
     .form-navigation__button {
         width: 50px;
         height: 50px;
-        background-color: #b20a2c;
-        border-radius: 50%;
+        background-color: #ff0505;
+        // border-radius: 50%;
         position: relative;
         cursor: pointer;
         &--prev {
@@ -167,7 +168,7 @@
 }
 
 .application-form__radio:checked+label {
-    border: 3px solid #b20a2c;
+    border: 3px solid #ff0505;
 }
 
 .navigation__progress-bar--basic {
@@ -177,8 +178,8 @@
         top: 0;
         left: 0;
         width: 0%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -208,8 +209,8 @@
         top: 0;
         left: 0;
         width: 20%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -239,8 +240,8 @@
         top: 0;
         left: 0;
         width: 40%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -270,8 +271,8 @@
         top: 0;
         left: 0;
         width: 60%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -301,8 +302,8 @@
         top: 0;
         left: 0;
         width: 80%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -332,8 +333,8 @@
         top: 0;
         left: 0;
         width: 95%;
-        border-radius: 8px 0 0px 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px 0 0px 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -363,8 +364,8 @@
         top: 0;
         left: 0;
         width: 100%;
-        border-radius: 8px;
-        background-color: #b20a2c;
+        // border-radius: 8px;
+        background-color: #ff0505;
         height: 40px;
     }
     &::before {
@@ -407,17 +408,17 @@
         position: relative;
         overflow: hidden;
         transition: transform 2s;
-        border-radius: 22px;
+        // border-radius: 22px;
         &::before {
             content: "";
-            background-color: rgba($color: #b20a2c, $alpha: 0.6);
+            background-color: rgba($color: #ff0505, $alpha: 0.6);
             transform: scale(0);
             width: 1px;
             height: 1px;
             position: absolute;
             top: 0;
             left: 0;
-            border-radius: 50%;
+            // border-radius: 50%;
             transition: transform 0.1s ease;
         }
         &:hover {
@@ -439,6 +440,7 @@
         .application-image {
             width: 60%;
             height: 60%;
+            object-fit: contain;
         }
         .application-caption {
             font-size: 24px;
@@ -481,10 +483,10 @@
         width: 100%;
         border: 1px solid #0b1f35;
         height: 10px;
-        border-radius: 8px;
+        // border-radius: 8px;
     }
     .ui-slider-handle.ui-state-default {
-        border-radius: 50%;
+        // border-radius: 50%;
         height: 20px;
         width: 20px;
         top: -50%;
@@ -493,7 +495,7 @@
         outline: none;
     }
     .ui-slider-range {
-        background: linear-gradient(45deg, #b20a2c, rgb(47, 47, 47));
+        background: linear-gradient(45deg, #ff0505, rgb(47, 47, 47));
         background-size: 400% 400%;
         animation: gradient 5s ease infinite;
     }
@@ -502,7 +504,7 @@
     }
     .application-input {
         height: 30px;
-        border-radius: 8px;
+        // border-radius: 8px;
         border: 1px solid #0b1f35;
         width: calc(30% - 10px);
         font-size: 18px;
@@ -533,8 +535,8 @@
         padding: 10px 20px;
         outline: none;
         width: fit-content;
-        border-radius: 8px;
-        border: 2px solid #b20a2c;
+        // border-radius: 8px;
+        border: 2px solid #ff0505;
         margin-top: 10px;
         &::placeholder {
             font-size: 16px;
@@ -546,11 +548,11 @@
     padding: 15px 30px;
     font-size: 24px;
     font-weight: 500;
-    background-color: #b20a2c;
+    background-color: #ff0505;
     color: #fff;
     outline: none;
     border: none;
-    border-radius: 8px;
+    // border-radius: 8px;
     margin-bottom: 40px;
     cursor: pointer;
     font-weight: 600;

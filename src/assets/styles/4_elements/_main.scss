@@ -14,10 +14,11 @@
     }
 }
 
-.greeting-basic {
-    background: linear-gradient(135deg, #ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
+.greeting-basic,
+body {
+    background: linear-gradient(135deg, #FEAC5E, #C779D0, #4BC0C8);
     background-size: 400% 400%;
-    animation: gradient 3s ease infinite;
+    animation: gradient 10s ease infinite;
 }
 
 .greeting-slide {
@@ -35,7 +36,8 @@
         width: 50%;
     }
     .attention-container__header {
-        color: #0b1f35;
+        // color: #0b1f35;
+        color: #fff;
         font-size: 42px;
         font-weight: 700;
     }
@@ -48,7 +50,7 @@
         background-color: rgba(11, 31, 53, .1);
         min-width: 104px;
         padding: 20px 10px;
-        border-radius: 8px;
+        // border-radius: 8px;
         font-weight: 600;
         color: #0b1f35;
         text-align: center;
@@ -63,7 +65,7 @@
         min-width: 104px;
         color: #fff;
         padding: 20px 10px;
-        border-radius: 8px;
+        // border-radius: 8px;
         font-weight: 600;
         text-align: center;
         transition: transform 0.3s ease;
@@ -77,6 +79,7 @@
     .greeting-image {
         width: 40%;
         height: 100%;
+        object-fit: contain;
     }
 }
 
@@ -145,9 +148,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100vw - 160px);
+    width: calc(100vw);
     height: fit-content;
-    padding: 60px 80px;
+    // padding: 60px 80px;
     .form-section,
     .banks-section,
     .whyus-section,
@@ -170,9 +173,9 @@
         font-size: 40px;
         margin-bottom: 40px;
     }
-    .form-section {
-        padding-top: 50px;
-    }
+    // .form-section {
+    //     padding-top: 50px;
+    // }
 }
 
 .section-container {
@@ -181,9 +184,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 22px;
+    // border-radius: 22px;
     min-height: 600px;
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     justify-content: center;
 }
 
@@ -222,7 +225,7 @@
     justify-content: space-between;
     .swiper-pagination-bullet {
         width: 23%;
-        border-radius: 8px;
+        border-radius: 0px;
         height: 150px;
         background: #f5f5f5;
         color: #fff;
@@ -262,9 +265,13 @@
 
 // advertisment section
 .advertisment-section {
-    margin-bottom: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // margin-bottom: 150px;
     img {
-        border-radius: 22px;
+        // border-radius: 22px;
+        width: 100%;
     }
 }
 
@@ -310,7 +317,7 @@
             width: 30px;
             height: 10px;
             background-color: rgba($color: #fff, $alpha: 0.8);
-            border-radius: 8px;
+            border-radius: 0px;
         }
         .swiper-pagination-bullet-active {
             background-color: rgba($color: #fff, $alpha: 1);
@@ -333,7 +340,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 22px;
+    // border-radius: 22px;
     padding: 20px 40px;
     position: relative;
     justify-content: center;
@@ -394,7 +401,7 @@
             justify-content: flex-start;
             .swiper-pagination-bullet {
                 width: 23%;
-                border-radius: 8px;
+                border-radius: 0px;
                 height: 100px;
                 background-color: #f5f5f5;
                 color: #0b1f35;
@@ -435,7 +442,7 @@
         height: calc(80% - 40px);
         padding: 20px;
         background-color: #fff;
-        border-radius: 22px;
+        // border-radius: 22px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -459,7 +466,7 @@
                 padding: 20px;
                 height: calc(100% - 40px);
                 width: calc(33% - 40px);
-                border-radius: 22px;
+                // border-radius: 22px;
                 &:hover {
                     box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
                 }
