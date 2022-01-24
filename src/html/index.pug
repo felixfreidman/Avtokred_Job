@@ -1,168 +1,133 @@
-include header.pug
-main.main.main-home 
-    section.form-section#form
-        //- .section-header(title="РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ") РАССЧИТАЙТЕ АВТОКРЕДИТ И ЗАПОЛНИТЕ АНКЕТУ
-        .section-container.form-container
-            include form.pug  
-    //- section.advertisment-section
-    //-     img(src="./assets/images/content/bannerAdver.jpg", alt="")
-    
-    .home-menu 
-        include menu-banks.pug
-        .home-menu-container#basicMenuContainer
-            .menu-container--vertical--small#verticalSmallContainer
-                include menu-about.pug
-            .menu-container--vertical--big#verticalBigContainer 
-                include menu-workproc.pug
-                .menu-button.menu-button--questions#questionButtonOpen
-                    .button-header вопросы и ответы
-                    .button-close.button-close--workprocess#questionButtonClose
-                    .swiper.question-swiper#questionSwiper 
-                            .swiper-wrapper
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style.min.css")
+        link(rel="shortcut icon", href="./assets/images/content/favicon.svg", type="image/x-icon")
+        title Автокред
+    body 
+        header.header 
+            .header-logo 
+                img(src="./assets/images/content/logo2.svg", alt="")
+                .header-city Иркутск
+            .header-navigation 
+                a.header-link.smooth-link(href="#form") Оформить кредит
+                a.header-link.smooth-link(href="#whyus") Клиенту
+                a.header-link.smooth-link(href="#about") О Компании
+                a.header-link.smooth-link(href="#contacts") Контакты 
+            .header-phone
+                span.phone-number(title="Заказать звонок") +7 914 913-45-21
+            .header-socials 
+                img(src="./assets/images/content/instagram.svg").header-icon
+                img(src="./assets/images/content/vk.svg").header-icon
+                img(src="./assets/images/content/whatapp.svg").header-icon
+                img(src="./assets/images/content/viber.svg").header-icon
+
+        main.main
+            .main-block
+                .main-block__title автокредитование следующего поколения
+                .main-block__subtitle Lorem ipsum dolor sit amet, consectetur adipiscsed aliqua. 
+                .main-block__btn-container 
+                    a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                    a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+            .main-form#form 
+                .form-block
+                    .form-block__form-selection
+                        .form-block__navigation-option.form-block__navigation-option--checked Не определились с выбором? 
+                        .form-block__navigation-option Быстрая анкета
+                        .form-block__navigation-option Полная анкета
+                    .form-block__form-container.form-block__form-container--uncertain
+                        .form-block__form-builder 
+                            .form-block__form
+                                form.uncertain-form(action="POST")
+                                    .uncertain-form__slide.slide--show#FirstSlide
+                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Тип транспорта") Какое транспортное средство вы хотите?
+                                        .slide__radio-container 
+                                            input#lightAuto(type="radio", name="transportType", checked).radio-container--radio
+                                            label(for="lightAuto").radio-container--option
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide1Car.png", alt="") 
+                                                span.option-title Седан
+                                            input#jeepAuto(type="radio", name="transportType").radio-container--radio
+                                            label(for="jeepAuto").radio-container--option
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide3Car.png", alt="") 
+                                                span.option-title Джип
+                                            input#MotoAuto(type="radio", name="transportType").radio-container--radio
+                                            label(for="MotoAuto").radio-container--option 
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide1Moto.png", alt="") 
+                                                span.option-title Мотоцикл
+                                            input#TruckAuto(type="radio", name="transportType").radio-container--radio
+                                            label(for="TruckAuto").radio-container--option 
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide1Truck.png", alt="") 
+                                                span.option-title Грузовики
+                                            input#SpecAuto(type="radio", name="transportType").radio-container--radio
+                                            label(for="SpecAuto").radio-container--option 
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide1Truck.png", alt="") 
+                                                span.option-title Спецтехника
+                                            input#OtherAuto(type="radio", name="transportType").radio-container--radio
+                                            label(for="OtherAuto").radio-container--option 
+                                                .option__circle-image
+                                                    img(src="./assets/images/content/slide1Other.png", alt="") 
+                                                span.option-title Другое
                                             
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками.  
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                        .form-block__navigation
+                                            .btn-navigation.btn-navigation--previous.btn-navigation--disabled.btn-uncertain--previous
+                                            .btn-navigation.btn-navigation--next.btn-uncertain--next#SecondSlideNext
+                                    .uncertain-form__slide.slide--hidden#SecondSlide
+                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Данные по кредиту") Заполните вводные данные по автокредиту
+                                        .slider-header Укажите сумму кредита
+                                        .application-slider 
+                                            .slider--debt#sliderDebt
+                                            input#debtInput(type="text", name="debtInput").application-input
+                                        .slider-header Укажите срок кредитования
+                                        .application-slider 
+                                            .slider--debt#sliderTime
+                                            input#timeInput(type="text", name="debtInput").application-input
+                                        .slider-header Укажите первый взнос
+                                        .application-slider 
+                                            .slider--debt#sliderInvest
+                                            input#investInput(type="text", name="debtInput").application-input
                                             
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
+                                        .form-block__navigation
+                                            .btn-navigation.btn-navigation--previous.btn-uncertain--previous#FirstSlidePrevious
+                                            .btn-navigation.btn-navigation--next.btn-uncertain--next#ThirdSlideNext
+                                    .uncertain-form__slide.slide--hidden#ThirdSlide
+                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Контактные данные") Заполните контактные данные
+                                        label(for="userName").submit-label Имя
+                                            input#userName(type="text", name="userName", placeholder="Ваше имя", required).submit-input
+                                        label(for="userPhone").submit-label Телефон
+                                            input#userPhone(type="text", name="userPhone", placeholder="Ваш номер телефона", required).submit-input
+                                        button(type="submit").submit-button Оставить заявку
                                             
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
-                                            
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
-                                            
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
-                                            
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain.jpg", data-question-header="Почему стоит обратиться в компанию автокредит?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Почему стоит обратиться в компанию автокредит?
-                                        .question-caption__content 
-                                            .caption-paragraph Мы являемся официальным партнером банков, которые специализируются на автокредитовании, и выступаем гарантом сделки.
-                                            .caption-paragraph Именно поэтому, обращаясь к нам для оформления заявки, вам потребуется только два документа.
-                                            .caption-paragraph Вы подаёте заявку сразу же во все банки и получаете решение в течении часа.
-                                            .caption-paragraph Автомобиль можно выбрать абсолютно любой, независимо от года выпуска и категории.
-                                            
-                                .swiper-slide.question-slide(data-question-image = "./assets/images/content/imageMain2.jpg", data-question-header="Какая у вас процентная ставка?")
-                                    .question-video 
-                                        img(src="./assets/images/content/imageMain2.jpg", alt="")
-                                    .question-caption 
-                                        .question-caption__header Какая у вас процентная ставка?
-                                        .question-caption__content
-                                            .caption-paragraph Процентная ставка определяется нашими банками-партнерами и зависит от суммы, срока, вашей кредитной истории и множества других факторов.
-                                            .caption-paragraph Обращаясь в нашу компанию, вы подаёте заявку сразу во все банки, а решение получаете уже через час.
-                                            .caption-paragraph Наши специалисты проконсультируют вас и помогут выбрать лучшее предложение из одобренных банками. 
-                            .swiper-pagination.question-pagination
-    section.advertisment-section
-        img(src="./assets/images/content/bannerAdver.jpg", alt="")
-    //- Форма для вопросов внизу
-    section.consultation-section 
-    section.map-section#contact
-include footer.html
+                                        .form-block__navigation
+                                            .btn-navigation.btn-navigation--previous.btn-uncertain--previous#SecondSlidePrevious
+                                            .btn-navigation.btn-navigation--next.btn-uncertain--next.btn-navigation--disabled
+                        .form-block__result-container
+                            .form-block__stage-navigation 
+                                .stage-navigation__header Ваш прогресс
+                                ol.list-navigation#uncertainNavigation
+                            .form-block__progress-container 
+                                .progress-navigation-bar.progress-navigation-bar--0p#uncertainStatusBar 
+            .main-block
+                .main-block__title автокредитование следующего поколения
+                .main-block__subtitle Lorem ipsum dolor sit amet, consectetur adipiscsed aliqua. 
+                .main-block__btn-container 
+                    a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                    a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                        
+
+        footer 
+        script(src="./assets/js/jquery.min.js")
+        script(src="//code.jquery.com/ui/1.12.1/jquery-ui.js") 
+        script(src="./assets/js/plugins.min.js") 
+        script(src="./assets/js/main.min.js")  
+        
+        
+        
+        
