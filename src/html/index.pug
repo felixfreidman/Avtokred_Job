@@ -26,12 +26,47 @@ html(lang="en")
                 img(src="./assets/images/content/viber.svg").header-icon
 
         main.main
-            .main-block
-                .main-block__title автокредитование следующего поколения
-                .main-block__subtitle Lorem ipsum dolor sit amet, consectetur adipiscsed aliqua. 
-                .main-block__btn-container 
-                    a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
-                    a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+            .greeting-basic
+                .swiper.greeting-swiper#greetingSwipper
+                    .swiper-wrapper
+                        .swiper-slide.greeting-basic
+                            .greeting-slide 
+                                .attention-container 
+                                    .attention-container__header(data-info="Кредит на покупку легкового автомобиля") Кредит на покупку легкового автомобиля
+                                        .typewrite(data-period="2000",data-type='[""]')
+                                    .attention-container-row 
+                                        a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                                        a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                                //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
+                        .swiper-slide.greeting-basic
+                                .greeting-slide 
+                                    .attention-container 
+                                        .attention-container__header(data-info="Кредит на покупку специальной техники") Кредит на покупку специальной техники 
+                                            .typewrite(data-period="2000",data-type='["специальной техники"]')
+                                        .attention-container-row 
+                                            a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                                            a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                                    //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
+                        .swiper-slide.greeting-basic
+                                .greeting-slide 
+                                    .attention-container 
+                                        .attention-container__header(data-info="Подбор автомобилей под ваши нужды") Подбор автомобилей под ваши нужды
+                                            .typewrite(data-period="2000",data-type='[" ваши нужды"]')
+                                        .attention-container-row 
+                                            a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                                            a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                                    //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
+                        .swiper-slide.greeting-basic
+                                .greeting-slide 
+                                    .attention-container 
+                                        .attention-container__header(data-info="Сотрудничество") Приглашаем к сотрудничеству ценных партнеров
+                                            .typewrite(data-period="2000",data-type='["ценных партнеров"]')
+                                        .attention-container-row 
+                                            a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                                            a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                                    //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
+                    .swiper-pagination.home-pagination
+            
             .main-form#form 
                 .form-block
                     .form-block__form-selection

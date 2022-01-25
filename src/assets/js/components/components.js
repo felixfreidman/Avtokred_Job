@@ -1,43 +1,43 @@
 // // Хранилища дата-данных,
 // //для удобного заполнения данных в свайперах
-// let menu = [];
-// let HeadersArray = document.querySelectorAll(".attention-container__header");
-// HeadersArray.forEach((element) => {
-//     let HeaderValue = element.getAttribute("data-info");
-//     menu.push(HeaderValue);
-// });
+let menu = [];
+let HeadersArray = document.querySelectorAll(".attention-container__header");
+HeadersArray.forEach((element) => {
+    let HeaderValue = element.getAttribute("data-info");
+    menu.push(HeaderValue);
+});
 // let menuCompany = [];
 // let companyPagesArray = document.querySelectorAll(".about-info");
 // companyPagesArray.forEach((element) => {
 //     let HeaderValue = element.getAttribute("data-info");
 //     menuCompany.push(HeaderValue);
 // });
-// // Свайперы, которые запускаются сразу
-// let swiperGreet = new Swiper("#greetingSwipper", {
-//     // navigation: {
-//     //     nextEl: ".greeting-next",
-//     //     prevEl: ".greeting-prev",
-//     // },
-//     pagination: {
-//         el: ".swiper-pagination",
-//         clickable: true,
-//         renderBullet: function(index, className) {
-//             let readyElement = `
-//             <div class = "${className} bullet-special">
-//                 <div class ="bullet-header">${menu[index]}</div>
-//                 <div class = ""></div>
-//             </div>
-//             `;
-//             return readyElement;
-//         },
-//     },
-//     loop: true,
-//     effect: "fade",
-//     speed: 800,
-//     watchSlidesProgress: true,
-//     watchVisibility: true,
-//     disableOnInteraction: true,
-// });
+// Свайперы, которые запускаются сразу
+let swiperGreet = new Swiper("#greetingSwipper", {
+    // navigation: {
+    //     nextEl: ".greeting-next",
+    //     prevEl: ".greeting-prev",
+    // },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function(index, className) {
+            let readyElement = `
+            <div class = "${className} bullet-special">
+                <div class ="bullet-header">${menu[index]}</div>
+                <div class = ""></div>
+            </div>
+            `;
+            return readyElement;
+        },
+    },
+    loop: true,
+    effect: "fade",
+    speed: 800,
+    watchSlidesProgress: true,
+    watchVisibility: true,
+    disableOnInteraction: true,
+});
 // let swiperBanks = new Swiper("#banksSwiper", {
 //     navigation: {
 //         nextEl: ".button-bank--next",
