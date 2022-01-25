@@ -367,34 +367,34 @@ html {
                             &--active {
                                 font-weight: 700;
                                 font-size: 22px;
-                                color: #df5d3a;
+                                color: #b20a2c;
                                 &::before {
-                                    background-color: #df5d3a
+                                    background-color: #b20a2c
                                 }
                                 &::after {
-                                    background-color: #df5d3a;
+                                    background-color: #b20a2c;
                                 }
                             }
                             &--completed {
                                 font-weight: 400;
                                 font-size: 14px;
-                                color: #7e79cd;
+                                color: #61513b;
                                 &::before {
-                                    background-color: #7e79cd;
+                                    background-color: #61513b;
                                 }
                                 &::after {
-                                    background-color: #7e79cd;
+                                    background-color: #61513b;
                                 }
                             }
                             &--disabled {
                                 font-weight: 400;
                                 font-size: 14px;
-                                color: #c6c5b3;
+                                color: #9d9ea0;
                                 &::before {
-                                    background-color: #c6c5b3;
+                                    background-color: #9d9ea0;
                                 }
                                 &::after {
-                                    background-color: #c6c5b3;
+                                    background-color: #9d9ea0;
                                 }
                             }
                         }
@@ -650,6 +650,7 @@ html {
         width: 100%;
         font-size: 18px;
         font-weight: 600;
+        margin-bottom: 20px;
         .submit-input {
             margin-top: 20px;
             width: calc(60% - 40px);
@@ -659,9 +660,13 @@ html {
             color: #0b1f35;
             font-size: 18px;
             font-weight: 600;
+            outline: none;
             &::placeholder {
                 font-weight: 500;
                 font-size: 16px;
+            }
+            &:focus {
+                border: 2px solid #b20a2c;
             }
         }
     }

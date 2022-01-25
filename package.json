@@ -45,6 +45,7 @@
         "swiper": "^4.5.0",
         "@fancyapps/fancybox": "3.5.2",
         "jquery-ui": "^1.13.0",
-        "aos": "^2.3.4"
+        "aos": "^2.3.4",
+        "inputmask": "5.0.7"
     }
 }

@@ -516,3 +516,5 @@ $(document).ready(function() {
         }
     });
 });
+
+$("#userPhone").inputmask();

@@ -100,9 +100,9 @@ html(lang="en")
                                     .uncertain-form__slide.slide--hidden#ThirdSlide
                                         .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Контактные данные") Заполните контактные данные
                                         label(for="userName").submit-label Имя
-                                            input#userName(type="text", name="userName", placeholder="Ваше имя", required).submit-input
+                                            input#userName(type="text", name="userName", placeholder="Ваше имя", pattern="[^0-9]+", required).submit-input
                                         label(for="userPhone").submit-label Телефон
-                                            input#userPhone(type="text", name="userPhone", placeholder="Ваш номер телефона", required).submit-input
+                                            input#userPhone(type="text", name="userPhone", placeholder="Ваш номер телефона",data-inputmask="'mask': '+7(999) 999-99-99'", required).submit-input
                                         button(type="submit").submit-button Оставить заявку
                                             
                                         .form-block__navigation
