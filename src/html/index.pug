@@ -47,15 +47,15 @@ html(lang="en")
                                             a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
                                             a(href="about").btn-template.btn-template--more.smooth-link Подробнее
                                     //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
-                        .swiper-slide.greeting-basic
-                                .greeting-slide 
-                                    .attention-container 
-                                        .attention-container__header(data-info="Подбор автомобилей под ваши нужды") Подбор автомобилей под ваши нужды
-                                            .typewrite(data-period="2000",data-type='[" ваши нужды"]')
-                                        .attention-container-row 
-                                            a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
-                                            a(href="about").btn-template.btn-template--more.smooth-link Подробнее
-                                    //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
+                        //- .swiper-slide.greeting-basic
+                        //-         .greeting-slide 
+                        //-             .attention-container 
+                        //-                 .attention-container__header(data-info="Подбор автомобилей под ваши нужды") Подбор автомобилей под ваши нужды
+                        //-                     .typewrite(data-period="2000",data-type='[" ваши нужды"]')
+                        //-                 .attention-container-row 
+                        //-                     a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+                        //-                     a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+                        //-             //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
                         .swiper-slide.greeting-basic
                                 .greeting-slide 
                                     .attention-container 
@@ -66,95 +66,169 @@ html(lang="en")
                                             a(href="about").btn-template.btn-template--more.smooth-link Подробнее
                                     //- img(src="./assets/images/content/slide1Car.png", alt="").greeting-image
                     .swiper-pagination.home-pagination
+
+
+            .main-form#form
+                    .main-form__title Определились с выбором?
+                    .main-form__container 
+                        .main-form__btn.main-form__btn--fast-form Быстрая анкета
+                        .main-form__btn.main-form__btn--full-form Полная анкета
+            .main-banks
+                    .main-banks__title НАШИ ПАРТНЕРЫ
+                    .banks-swiper.swiper#banksSwiper
+                        
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
+                            .swiper-slide 
+                                .bank-card 
+                                    img(src="./assets/images/content/tinkoff.png")
             
-            .main-form#form 
-                .form-block
-                    .form-block__form-selection
-                        .form-block__navigation-option.form-block__navigation-option--checked Не определились с выбором? 
-                        .form-block__navigation-option Быстрая анкета
-                        .form-block__navigation-option Полная анкета
-                    .form-block__form-container.form-block__form-container--uncertain
-                        .form-block__form-builder 
-                            .form-block__form
-                                form.uncertain-form(action="POST")
-                                    .uncertain-form__slide.slide--show#FirstSlide
-                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Тип транспорта") Какое транспортное средство вы хотите?
-                                        .slide__radio-container 
-                                            input#lightAuto(type="radio", name="transportType", checked).radio-container--radio
-                                            label(for="lightAuto").radio-container--option
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide1Car.png", alt="") 
-                                                span.option-title Седан
-                                            input#jeepAuto(type="radio", name="transportType").radio-container--radio
-                                            label(for="jeepAuto").radio-container--option
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide3Car.png", alt="") 
-                                                span.option-title Джип
-                                            input#MotoAuto(type="radio", name="transportType").radio-container--radio
-                                            label(for="MotoAuto").radio-container--option 
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide1Moto.png", alt="") 
-                                                span.option-title Мотоцикл
-                                            input#TruckAuto(type="radio", name="transportType").radio-container--radio
-                                            label(for="TruckAuto").radio-container--option 
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide1Truck.png", alt="") 
-                                                span.option-title Грузовики
-                                            input#SpecAuto(type="radio", name="transportType").radio-container--radio
-                                            label(for="SpecAuto").radio-container--option 
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide1Truck.png", alt="") 
-                                                span.option-title Спецтехника
-                                            input#OtherAuto(type="radio", name="transportType").radio-container--radio
-                                            label(for="OtherAuto").radio-container--option 
-                                                .option__circle-image
-                                                    img(src="./assets/images/content/slide1Other.png", alt="") 
-                                                span.option-title Другое
+
+            .main-calculator 
+                .main-calculator__title Узнайте размер ежемесячного платежа
+                .main-calculator__content 
+                    .main-calculator__controller 
+                        .controller-container 
+                            .controller-title Сумма кредита (рубли)
+                            .slider-container
+                                .slider.slider--time#sliderTime
+                            .slider-caption
+                                span.slider-caption__value.slider-caption__value--min 350.000
+                                span.slider-caption__value.slider-caption__value--half 2.500.000
+                                span.slider-caption__value.slider-caption__value--max 5.000.000
+                        .controller-container 
+                            .controller-title Срок кредита
+                            .controller-radio 
+                                input#6month(type="radio", name="debtTime").controller-input
+                                label(for="6month").controller-label 6 мес
+                                input#1year(type="radio", name="debtTime").controller-input
+                                label(for="1year").controller-label 1 год
+                                input#2year(type="radio", name="debtTime").controller-input
+                                label(for="2year").controller-label 2 года
+                                input#3year(type="radio", name="debtTime").controller-input
+                                label(for="3year").controller-label 3 года
+                                input#4year(type="radio", name="debtTime", checked).controller-input
+                                label(for="4year").controller-label 4 года
+                                input#5year(type="radio", name="debtTime").controller-input
+                                label(for="5year").controller-label 5 лет
+                        .controller-container 
+                            .controller-title Первый взнос (рубли)
+                            .slider-container
+                                .slider.slider--deposit#sliderDeposit
+                            .slider-caption
+                                span.slider-caption__value.slider-caption__value--min 0
+                                span.slider-caption__value.slider-caption__value--half 200.000
+                                span.slider-caption__value.slider-caption__value--max 400.000
+                    .main-calculator__result
+                        .result-box 
+                            .result-box__title Ежемесячный платеж составит:
+                            .result-box__result#interestResult 12221 ₽
+                            .result-box__caption При расчете используется минимально возможная ставка по автокредиту — 6,4% годовых*. Реальная процентная ставка может отличаться.
+            //- .main-form#form 
+            //-     .form-block
+            //-         .form-block__form-selection
+            //-             .form-block__navigation-option.form-block__navigation-option--checked Не определились с выбором? 
+            //-             .form-block__navigation-option Быстрая анкета
+            //-             .form-block__navigation-option Полная анкета
+            //-         .form-block__form-container.form-block__form-container--uncertain
+            //-             .form-block__form-builder 
+            //-                 .form-block__form
+            //-                     form.uncertain-form(action="POST")
+            //-                         .uncertain-form__slide.slide--show#FirstSlide
+            //-                             .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Тип транспорта") Какое транспортное средство вы хотите?
+            //-                             .slide__radio-container 
+            //-                                 input#lightAuto(type="radio", name="transportType", checked).radio-container--radio
+            //-                                 label(for="lightAuto").radio-container--option
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide1Car.png", alt="") 
+            //-                                     span.option-title Седан
+            //-                                 input#jeepAuto(type="radio", name="transportType").radio-container--radio
+            //-                                 label(for="jeepAuto").radio-container--option
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide3Car.png", alt="") 
+            //-                                     span.option-title Джип
+            //-                                 input#MotoAuto(type="radio", name="transportType").radio-container--radio
+            //-                                 label(for="MotoAuto").radio-container--option 
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide1Moto.png", alt="") 
+            //-                                     span.option-title Мотоцикл
+            //-                                 input#TruckAuto(type="radio", name="transportType").radio-container--radio
+            //-                                 label(for="TruckAuto").radio-container--option 
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide1Truck.png", alt="") 
+            //-                                     span.option-title Грузовики
+            //-                                 input#SpecAuto(type="radio", name="transportType").radio-container--radio
+            //-                                 label(for="SpecAuto").radio-container--option 
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide1Truck.png", alt="") 
+            //-                                     span.option-title Спецтехника
+            //-                                 input#OtherAuto(type="radio", name="transportType").radio-container--radio
+            //-                                 label(for="OtherAuto").radio-container--option 
+            //-                                     .option__circle-image
+            //-                                         img(src="./assets/images/content/slide1Other.png", alt="") 
+            //-                                     span.option-title Другое
                                             
-                                        .form-block__navigation
-                                            .btn-navigation.btn-navigation--previous.btn-navigation--disabled.btn-uncertain--previous
-                                            .btn-navigation.btn-navigation--next.btn-uncertain--next#SecondSlideNext
-                                    .uncertain-form__slide.slide--hidden#SecondSlide
-                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Данные по кредиту") Заполните вводные данные по автокредиту
-                                        .slider-header Укажите сумму кредита
-                                        .application-slider 
-                                            .slider--debt#sliderDebt
-                                            input#debtInput(type="text", name="debtInput").application-input
-                                        .slider-header Укажите срок кредитования
-                                        .application-slider 
-                                            .slider--debt#sliderTime
-                                            input#timeInput(type="text", name="debtInput").application-input
-                                        .slider-header Укажите первый взнос
-                                        .application-slider 
-                                            .slider--debt#sliderInvest
-                                            input#investInput(type="text", name="debtInput").application-input
+            //-                             .form-block__navigation
+            //-                                 .btn-navigation.btn-navigation--previous.btn-navigation--disabled.btn-uncertain--previous
+            //-                                 .btn-navigation.btn-navigation--next.btn-uncertain--next#SecondSlideNext
+            //-                         .uncertain-form__slide.slide--hidden#SecondSlide
+            //-                             .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Данные по кредиту") Заполните вводные данные по автокредиту
+            //-                             .slider-header Укажите сумму кредита
+            //-                             .application-slider 
+            //-                                 .slider--debt#sliderDebt
+            //-                                 input#debtInput(type="text", name="debtInput").application-input
+            //-                             .slider-header Укажите срок кредитования
+            //-                             .application-slider 
+            //-                                 .slider--debt#sliderTime
+            //-                                 input#timeInput(type="text", name="debtInput").application-input
+            //-                             .slider-header Укажите первый взнос
+            //-                             .application-slider 
+            //-                                 .slider--debt#sliderInvest
+            //-                                 input#investInput(type="text", name="debtInput").application-input
                                             
-                                        .form-block__navigation
-                                            .btn-navigation.btn-navigation--previous.btn-uncertain--previous#FirstSlidePrevious
-                                            .btn-navigation.btn-navigation--next.btn-uncertain--next#ThirdSlideNext
-                                    .uncertain-form__slide.slide--hidden#ThirdSlide
-                                        .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Контактные данные") Заполните контактные данные
-                                        label(for="userName").submit-label Имя
-                                            input#userName(type="text", name="userName", placeholder="Ваше имя", pattern="[^0-9]+", required).submit-input
-                                        label(for="userPhone").submit-label Телефон
-                                            input#userPhone(type="text", name="userPhone", placeholder="Ваш номер телефона",data-inputmask="'mask': '+7(999) 999-99-99'", required).submit-input
-                                        button(type="submit").submit-button Оставить заявку
+            //-                             .form-block__navigation
+            //-                                 .btn-navigation.btn-navigation--previous.btn-uncertain--previous#FirstSlidePrevious
+            //-                                 .btn-navigation.btn-navigation--next.btn-uncertain--next#ThirdSlideNext
+            //-                         .uncertain-form__slide.slide--hidden#ThirdSlide
+            //-                             .slide__header.slide__header--uncertain(data-slide-header-uncertain = "Контактные данные") Заполните контактные данные
+            //-                             label(for="userName").submit-label Имя
+            //-                                 input#userName(type="text", name="userName", placeholder="Ваше имя", pattern="[^0-9]+", required).submit-input
+            //-                             label(for="userPhone").submit-label Телефон
+            //-                                 input#userPhone(type="text", name="userPhone", placeholder="Ваш номер телефона",data-inputmask="'mask': '+7(999) 999-99-99'", required).submit-input
+            //-                             button(type="submit").submit-button Оставить заявку
                                             
-                                        .form-block__navigation
-                                            .btn-navigation.btn-navigation--previous.btn-uncertain--previous#SecondSlidePrevious
-                                            .btn-navigation.btn-navigation--next.btn-uncertain--next.btn-navigation--disabled
-                        .form-block__result-container
-                            .form-block__stage-navigation 
-                                .stage-navigation__header Ваш прогресс
-                                ol.list-navigation#uncertainNavigation
-                            .form-block__progress-container 
-                                .progress-navigation-bar.progress-navigation-bar--0p#uncertainStatusBar 
-            .main-block
-                .main-block__title автокредитование следующего поколения
-                .main-block__subtitle Lorem ipsum dolor sit amet, consectetur adipiscsed aliqua. 
-                .main-block__btn-container 
-                    a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
-                    a(href="about").btn-template.btn-template--more.smooth-link Подробнее
+            //-                             .form-block__navigation
+            //-                                 .btn-navigation.btn-navigation--previous.btn-uncertain--previous#SecondSlidePrevious
+            //-                                 .btn-navigation.btn-navigation--next.btn-uncertain--next.btn-navigation--disabled
+            //-             .form-block__result-container
+            //-                 .form-block__stage-navigation 
+            //-                     .stage-navigation__header Ваш прогресс
+            //-                     ol.list-navigation#uncertainNavigation
+            //-                 .form-block__progress-container 
+            //-                     .progress-navigation-bar.progress-navigation-bar--0p#uncertainStatusBar 
+            //- .main-block
+            //-     .main-block__title автокредитование следующего поколения
+            //-     .main-block__subtitle Lorem ipsum dolor sit amet, consectetur adipiscsed aliqua. 
+            //-     .main-block__btn-container 
+            //-         a(href="#form").btn-template.btn-template--sale.smooth-link Заполнить форму
+            //-         a(href="about").btn-template.btn-template--more.smooth-link Подробнее
                         
 
         footer 

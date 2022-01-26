@@ -38,31 +38,36 @@ let swiperGreet = new Swiper("#greetingSwipper", {
     watchVisibility: true,
     disableOnInteraction: true,
 });
-// let swiperBanks = new Swiper("#banksSwiper", {
-//     navigation: {
-//         nextEl: ".button-bank--next",
-//         prevEl: ".button-bank--prev",
-//     },
-//     pagination: {
-//         el: ".banks-pagination",
-//         clickable: true,
-//     },
-//     loop: true,
-//     effect: "cards",
-//     speed: 800,
-//     slidesPerView: 6,
-//     breakpoints: {
-//         920: {
-//             slidesPerView: 4,
-//         },
-//         600: {
-//             slidesPerView: 3,
-//         },
-//         450: {
-//             slidesPerView: 2,
-//         },
-//     },
-// });
+let swiperBanks = new Swiper("#banksSwiper", {
+    // navigation: {
+    //     nextEl: ".button-bank--next",
+    //     prevEl: ".button-bank--prev",
+    // },
+    // pagination: {
+    //     el: ".banks-pagination",
+    //     clickable: true,
+    // },
+    loop: true,
+    effect: "cards",
+    speed: 800,
+    slidesPerView: 4,
+    autoplay: {
+        delay: 1,
+    },
+    spaceBetween: 50,
+    disableOnInteraction: false,
+    breakpoints: {
+        920: {
+            slidesPerView: 4,
+        },
+        600: {
+            slidesPerView: 3,
+        },
+        450: {
+            slidesPerView: 2,
+        },
+    },
+});
 
 // // Автопечатание текста в главном свайпере
 // var TxtType = function(el, toRotate, period) {
@@ -141,6 +146,35 @@ $(document).ready(function() {
             let debtValue = ui.value;
             debtValue = numberWithCommas(debtValue);
             $("#debtInput").val(debtValue);
+        },
+    });
+    $("#sliderTime").slider({
+        range: "min",
+        animate: true,
+        value: 500000,
+        min: 35000,
+        max: 5000000,
+        step: 200000,
+        // slide: function(event, ui) {
+        //     let debtValue = ui.value;
+        //     debtValue = numberWithCommas(debtValue);
+        //     $("#debtInput").val(debtValue);
+        // },
+    });
+    $("#sliderDeposit").slider({
+        range: "min",
+        animate: true,
+        value: 100000,
+        min: 0,
+        max: 400000,
+        step: 1000,
+        slide: function(event, ui) {
+            let debtValue = ui.value;
+            debtValue = numberWithCommas(debtValue);
+
+            $("#debtInput").val(debtValue);
+            var k = 3.9 / 1200.0;
+            sum = price * k * (Math.pow(1 + k, srok) / (Math.pow(1 + k, srok) - 1));
         },
     });
     $("#debtInput").val($("#sliderDebt").slider("option", "value"));
