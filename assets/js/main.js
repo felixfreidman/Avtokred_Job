@@ -1,5 +1,17 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 // /*
 // @author: felixfreidman
 // @mail: felixfreidmandev@gmail.com
@@ -554,129 +566,167 @@ var swiperBanks = new Swiper("#banksSwiper", {
 // Работаем со слайдерами в форме
 
 $(document).ready(function () {
+  // $("#sliderDebt").slider({
+  //     range: "min",
+  //     animate: true,
+  //     value: 500000,
+  //     min: 100000,
+  //     max: 4350000,
+  //     step: 1000,
+  //     slide: function(event, ui) {
+  //         let debtValue = ui.value;
+  //         debtValue = numberWithCommas(debtValue);
+  //         $("#debtInput").val(debtValue);
+  //     },
+  // });
   $("#sliderDebt").slider({
     range: "min",
     animate: true,
-    value: 500000,
+    value: 400000,
     min: 100000,
-    max: 4350000,
-    step: 1000,
-    slide: function slide(event, ui) {
-      var debtValue = ui.value;
-      debtValue = numberWithCommas(debtValue);
-      $("#debtInput").val(debtValue);
-    }
-  });
-  $("#sliderTime").slider({
-    range: "min",
-    animate: true,
-    value: 500000,
-    min: 35000,
     max: 5000000,
-    step: 200000 // slide: function(event, ui) {
-    //     let debtValue = ui.value;
-    //     debtValue = numberWithCommas(debtValue);
-    //     $("#debtInput").val(debtValue);
-    // },
+    slide: function slide(event, ui) {
+      var debtMoney = $("#sliderDebt").slider("value");
+      var debtDeposit = $("#sliderDeposit").slider("value");
+      var debtTimeRadios = document.querySelectorAll(".controller-input");
 
+      var objectDebtTime = _toConsumableArray(debtTimeRadios).filter(function (radio) {
+        if (radio.checked) {
+          return radio;
+        }
+      });
+
+      var debtTime = objectDebtTime[0].id;
+      var updatedDebtTime = debtTime.replace("month", "");
+
+      switch (updatedDebtTime) {
+        case "05":
+          updatedDebtTime = 0.5;
+          break;
+      }
+
+      var coeficient = 3.9 / 1200.0;
+      updatedDebtTime = parseInt(updatedDebtTime);
+      debtMoney = parseInt(debtMoney);
+      debtDeposit = parseInt(debtDeposit);
+      debtMoney -= debtDeposit;
+      var monthPayment = debtMoney * coeficient * Math.floor(Math.pow(1 + coeficient, updatedDebtTime) / (Math.pow(1 + coeficient, updatedDebtTime) - 1));
+      $;
+      $("#depositHalf").text(Math.floor(debtMoney * 0.8 / 2));
+      $("#depositMax").text(Math.floor(debtMoney * 0.8));
+      var updatedMaxValue = parseInt($("#depositMax").text());
+      $("#sliderDeposit").slider("option", "max", updatedMaxValue);
+      $("#interestResult").text(Math.floor(monthPayment) + " ₽");
+    }
   });
   $("#sliderDeposit").slider({
     range: "min",
     animate: true,
-    value: 100000,
+    value: 40000,
     min: 0,
-    max: 400000,
-    step: 1000,
+    max: 80000,
     slide: function slide(event, ui) {
-      var debtValue = ui.value;
-      debtValue = numberWithCommas(debtValue);
-      $("#debtInput").val(debtValue);
-      var k = 3.9 / 1200.0;
-      sum = price * k * (Math.pow(1 + k, srok) / (Math.pow(1 + k, srok) - 1));
-    }
-  });
-  $("#debtInput").val($("#sliderDebt").slider("option", "value"));
-  $("#debtInput").change(function () {
-    $("#sliderDebt").slider("value", $(this).val());
-  });
-  $("#sliderTime").slider({
-    range: "min",
-    animate: true,
-    value: 3,
-    min: 1,
-    max: 8,
-    step: 1,
-    slide: function slide(event, ui) {
-      var timeValue = ui.value;
+      var debtMoney = $("#sliderDebt").slider("value");
+      var debtDeposit = $("#sliderDeposit").slider("value");
+      var debtTimeRadios = document.querySelectorAll(".controller-input");
 
-      switch (timeValue) {
-        case 1:
-          timeValue = "".concat(timeValue, " \u0433\u043E\u0434");
+      var objectDebtTime = _toConsumableArray(debtTimeRadios).filter(function (radio) {
+        if (radio.checked) {
+          return radio;
+        }
+      });
+
+      var debtTime = objectDebtTime[0].id;
+      var updatedDebtTime = debtTime.replace("month", "");
+
+      switch (updatedDebtTime) {
+        case "05":
+          updatedDebtTime = 0.5;
           break;
-
-        case 2:
-          timeValue = "".concat(timeValue, " \u0433\u043E\u0434\u0430");
-          break;
-
-        case 3:
-          timeValue = "".concat(timeValue, " \u0433\u043E\u0434\u0430");
-          break;
-
-        case 4:
-          timeValue = "".concat(timeValue, " \u0433\u043E\u0434\u0430");
-          break;
-
-        default:
-          timeValue = "".concat(timeValue, " \u043B\u0435\u0442");
       }
 
-      $("#timeInput").val(timeValue);
+      var coeficient = 3.9 / 1200.0;
+      updatedDebtTime = parseInt(updatedDebtTime);
+      debtMoney = parseInt(debtMoney);
+      debtDeposit = parseInt(debtDeposit);
+      debtMoney -= debtDeposit;
+      var monthPayment = Math.floor(debtMoney * coeficient * (Math.pow(1 + coeficient, updatedDebtTime) / (Math.pow(1 + coeficient, updatedDebtTime) - 1)));
+      $("#interestResult").text(Math.floor(monthPayment) + " ₽"); // var k = 3.9 / 1200.0;
+      // sum = price * k * (Math.pow(1 + k, srok) / (Math.pow(1 + k, srok) - 1));
     }
-  });
-  $("#timeInput").val($("#sliderTime").slider("option", "value"));
-  var timeValue = $("#timeInput").val();
-
-  switch (timeValue) {
-    default:
-      timeValue = "".concat(timeValue, " \u0433\u043E\u0434\u0430");
-  }
-
-  $("#timeInput").val(timeValue);
-  $("#timeInput").change(function () {
-    $("#sliderTime").slider("value", $(this).val());
-  });
-  $("#sliderIncome").slider({
-    range: "min",
-    animate: true,
-    value: 30000,
-    min: 10000,
-    max: 500000,
-    step: 5000,
-    slide: function slide(event, ui) {
-      var debtValue = ui.value;
-      debtValue = numberWithCommas(debtValue);
-      $("#incomeInput").val(debtValue);
-    }
-  });
-  $("#incomeInput").val($("#sliderIncome").slider("option", "value"));
-  $("#incomeInput").change(function () {
-    $("#sliderIncome").slider("value", $(this).val());
-  });
-  $("#sliderInvest").slider({
-    range: "min",
-    animate: true,
-    value: 100000,
-    min: 0,
-    max: 400000,
-    step: 1000,
-    slide: function slide(event, ui) {
-      var debtValue = ui.value;
-      debtValue = numberWithCommas(debtValue);
-      $("#investInput").val(debtValue);
-    }
-  });
-  $("#investInput").val($("#sliderInvest").slider("option", "value"));
-  $("#investInput").change(function () {
-    $("#sliderInvest").slider("value", $(this).val());
-  });
+  }); // $("#debtInput").val($("#sliderDebt").slider("option", "value"));
+  // $("#debtInput").change(function() {
+  //     $("#sliderDebt").slider("value", $(this).val());
+  // });
+  // $("#sliderTime").slider({
+  //     range: "min",
+  //     animate: true,
+  //     value: 3,
+  //     min: 1,
+  //     max: 8,
+  //     step: 1,
+  //     slide: function(event, ui) {
+  //         let timeValue = ui.value;
+  //         switch (timeValue) {
+  //             case 1:
+  //                 timeValue = `${timeValue} год`;
+  //                 break;
+  //             case 2:
+  //                 timeValue = `${timeValue} года`;
+  //                 break;
+  //             case 3:
+  //                 timeValue = `${timeValue} года`;
+  //                 break;
+  //             case 4:
+  //                 timeValue = `${timeValue} года`;
+  //                 break;
+  //             default:
+  //                 timeValue = `${timeValue} лет`;
+  //         }
+  //         $("#timeInput").val(timeValue);
+  //     },
+  // });
+  // $("#timeInput").val($("#sliderTime").slider("option", "value"));
+  // let timeValue = $("#timeInput").val();
+  // switch (timeValue) {
+  //     default: timeValue = `${timeValue} года`;
+  // }
+  // $("#timeInput").val(timeValue);
+  // $("#timeInput").change(function() {
+  //     $("#sliderTime").slider("value", $(this).val());
+  // });
+  // $("#sliderIncome").slider({
+  //     range: "min",
+  //     animate: true,
+  //     value: 30000,
+  //     min: 10000,
+  //     max: 500000,
+  //     step: 5000,
+  //     slide: function(event, ui) {
+  //         let debtValue = ui.value;
+  //         debtValue = numberWithCommas(debtValue);
+  //         $("#incomeInput").val(debtValue);
+  //     },
+  // });
+  // $("#incomeInput").val($("#sliderIncome").slider("option", "value"));
+  // $("#incomeInput").change(function() {
+  //     $("#sliderIncome").slider("value", $(this).val());
+  // });
+  // $("#sliderInvest").slider({
+  //     range: "min",
+  //     animate: true,
+  //     value: 100000,
+  //     min: 0,
+  //     max: 400000,
+  //     step: 1000,
+  //     slide: function(event, ui) {
+  //         let debtValue = ui.value;
+  //         debtValue = numberWithCommas(debtValue);
+  //         $("#investInput").val(debtValue);
+  //     },
+  // });
+  // $("#investInput").val($("#sliderInvest").slider("option", "value"));
+  // $("#investInput").change(function() {
+  //     $("#sliderInvest").slider("value", $(this).val());
+  // });
 });

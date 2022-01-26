@@ -108,9 +108,9 @@ html(lang="en")
                         .controller-container 
                             .controller-title Сумма кредита (рубли)
                             .slider-container
-                                .slider.slider--time#sliderTime
+                                .slider.slider--time#sliderDebt
                             .slider-caption
-                                span.slider-caption__value.slider-caption__value--min 350.000
+                                span.slider-caption__value.slider-caption__value--min 100.000
                                 span.slider-caption__value.slider-caption__value--half 2.500.000
                                 span.slider-caption__value.slider-caption__value--max 5.000.000
                         .controller-container 
@@ -118,28 +118,28 @@ html(lang="en")
                             .controller-radio 
                                 input#6month(type="radio", name="debtTime").controller-input
                                 label(for="6month").controller-label 6 мес
-                                input#1year(type="radio", name="debtTime").controller-input
-                                label(for="1year").controller-label 1 год
-                                input#2year(type="radio", name="debtTime").controller-input
-                                label(for="2year").controller-label 2 года
-                                input#3year(type="radio", name="debtTime").controller-input
-                                label(for="3year").controller-label 3 года
-                                input#4year(type="radio", name="debtTime", checked).controller-input
-                                label(for="4year").controller-label 4 года
-                                input#5year(type="radio", name="debtTime").controller-input
-                                label(for="5year").controller-label 5 лет
+                                input#12month(type="radio", name="debtTime").controller-input
+                                label(for="12month").controller-label 1 год
+                                input#24month(type="radio", name="debtTime").controller-input
+                                label(for="24month").controller-label 2 года
+                                input#36month(type="radio", name="debtTime").controller-input
+                                label(for="36month").controller-label 3 года
+                                input#48month(type="radio", name="debtTime", checked).controller-input
+                                label(for="48month").controller-label 4 года
+                                input#60month(type="radio", name="debtTime").controller-input
+                                label(for="60month").controller-label 5 лет
                         .controller-container 
                             .controller-title Первый взнос (рубли)
                             .slider-container
                                 .slider.slider--deposit#sliderDeposit
                             .slider-caption
                                 span.slider-caption__value.slider-caption__value--min 0
-                                span.slider-caption__value.slider-caption__value--half 200.000
-                                span.slider-caption__value.slider-caption__value--max 400.000
+                                span.slider-caption__value.slider-caption__value--half#depositHalf 160.000
+                                span.slider-caption__value.slider-caption__value--max#depositMax 320.000
                     .main-calculator__result
                         .result-box 
                             .result-box__title Ежемесячный платеж составит:
-                            .result-box__result#interestResult 12221 ₽
+                            .result-box__result#interestResult 9014 ₽
                             .result-box__caption При расчете используется минимально возможная ставка по автокредиту — 6,4% годовых*. Реальная процентная ставка может отличаться.
             //- .main-form#form 
             //-     .form-block

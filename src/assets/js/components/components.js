@@ -135,121 +135,173 @@ let swiperBanks = new Swiper("#banksSwiper", {
 
 // Работаем со слайдерами в форме
 $(document).ready(function() {
+    // $("#sliderDebt").slider({
+    //     range: "min",
+    //     animate: true,
+    //     value: 500000,
+    //     min: 100000,
+    //     max: 4350000,
+    //     step: 1000,
+    //     slide: function(event, ui) {
+    //         let debtValue = ui.value;
+    //         debtValue = numberWithCommas(debtValue);
+    //         $("#debtInput").val(debtValue);
+    //     },
+    // });
     $("#sliderDebt").slider({
         range: "min",
         animate: true,
-        value: 500000,
+        value: 400000,
         min: 100000,
-        max: 4350000,
-        step: 1000,
-        slide: function(event, ui) {
-            let debtValue = ui.value;
-            debtValue = numberWithCommas(debtValue);
-            $("#debtInput").val(debtValue);
-        },
-    });
-    $("#sliderTime").slider({
-        range: "min",
-        animate: true,
-        value: 500000,
-        min: 35000,
         max: 5000000,
-        step: 200000,
-        // slide: function(event, ui) {
-        //     let debtValue = ui.value;
-        //     debtValue = numberWithCommas(debtValue);
-        //     $("#debtInput").val(debtValue);
-        // },
+        slide: function(event, ui) {
+            let debtMoney = $("#sliderDebt").slider("value");
+            let debtDeposit = $("#sliderDeposit").slider("value");
+            const debtTimeRadios = document.querySelectorAll(".controller-input");
+            let objectDebtTime = [...debtTimeRadios].filter((radio) => {
+                if (radio.checked) {
+                    return radio;
+                }
+            });
+            let debtTime = objectDebtTime[0].id;
+            let updatedDebtTime = debtTime.replace("month", "");
+            switch (updatedDebtTime) {
+                case "05":
+                    updatedDebtTime = 0.5;
+                    break;
+            }
+            let coeficient = 3.9 / 1200.0;
+            updatedDebtTime = parseInt(updatedDebtTime);
+            debtMoney = parseInt(debtMoney);
+            debtDeposit = parseInt(debtDeposit);
+            debtMoney -= debtDeposit;
+            let monthPayment =
+                debtMoney *
+                coeficient *
+                Math.floor(
+                    Math.pow(1 + coeficient, updatedDebtTime) /
+                    (Math.pow(1 + coeficient, updatedDebtTime) - 1)
+                );
+            $;
+            $("#depositHalf").text(Math.floor((debtMoney * 0.8) / 2));
+            $("#depositMax").text(Math.floor(debtMoney * 0.8));
+            let updatedMaxValue = parseInt($("#depositMax").text());
+            $("#sliderDeposit").slider("option", "max", updatedMaxValue);
+            $("#interestResult").text(Math.floor(monthPayment) + " ₽");
+        },
     });
     $("#sliderDeposit").slider({
         range: "min",
         animate: true,
-        value: 100000,
+        value: 40000,
         min: 0,
-        max: 400000,
-        step: 1000,
+        max: 80000,
         slide: function(event, ui) {
-            let debtValue = ui.value;
-            debtValue = numberWithCommas(debtValue);
-
-            $("#debtInput").val(debtValue);
-            var k = 3.9 / 1200.0;
-            sum = price * k * (Math.pow(1 + k, srok) / (Math.pow(1 + k, srok) - 1));
-        },
-    });
-    $("#debtInput").val($("#sliderDebt").slider("option", "value"));
-    $("#debtInput").change(function() {
-        $("#sliderDebt").slider("value", $(this).val());
-    });
-    $("#sliderTime").slider({
-        range: "min",
-        animate: true,
-        value: 3,
-        min: 1,
-        max: 8,
-        step: 1,
-        slide: function(event, ui) {
-            let timeValue = ui.value;
-            switch (timeValue) {
-                case 1:
-                    timeValue = `${timeValue} год`;
+            let debtMoney = $("#sliderDebt").slider("value");
+            let debtDeposit = $("#sliderDeposit").slider("value");
+            const debtTimeRadios = document.querySelectorAll(".controller-input");
+            let objectDebtTime = [...debtTimeRadios].filter((radio) => {
+                if (radio.checked) {
+                    return radio;
+                }
+            });
+            let debtTime = objectDebtTime[0].id;
+            let updatedDebtTime = debtTime.replace("month", "");
+            switch (updatedDebtTime) {
+                case "05":
+                    updatedDebtTime = 0.5;
                     break;
-                case 2:
-                    timeValue = `${timeValue} года`;
-                    break;
-                case 3:
-                    timeValue = `${timeValue} года`;
-                    break;
-                case 4:
-                    timeValue = `${timeValue} года`;
-                    break;
-                default:
-                    timeValue = `${timeValue} лет`;
             }
-            $("#timeInput").val(timeValue);
+            let coeficient = 3.9 / 1200.0;
+            updatedDebtTime = parseInt(updatedDebtTime);
+            debtMoney = parseInt(debtMoney);
+            debtDeposit = parseInt(debtDeposit);
+            debtMoney -= debtDeposit;
+            let monthPayment = Math.floor(
+                debtMoney *
+                coeficient *
+                (Math.pow(1 + coeficient, updatedDebtTime) /
+                    (Math.pow(1 + coeficient, updatedDebtTime) - 1))
+            );
+
+            $("#interestResult").text(Math.floor(monthPayment) + " ₽");
+            // var k = 3.9 / 1200.0;
+            // sum = price * k * (Math.pow(1 + k, srok) / (Math.pow(1 + k, srok) - 1));
         },
     });
-    $("#timeInput").val($("#sliderTime").slider("option", "value"));
-    let timeValue = $("#timeInput").val();
-    switch (timeValue) {
-        default: timeValue = `${timeValue} года`;
-    }
-    $("#timeInput").val(timeValue);
-    $("#timeInput").change(function() {
-        $("#sliderTime").slider("value", $(this).val());
-    });
-    $("#sliderIncome").slider({
-        range: "min",
-        animate: true,
-        value: 30000,
-        min: 10000,
-        max: 500000,
-        step: 5000,
-        slide: function(event, ui) {
-            let debtValue = ui.value;
-            debtValue = numberWithCommas(debtValue);
-            $("#incomeInput").val(debtValue);
-        },
-    });
-    $("#incomeInput").val($("#sliderIncome").slider("option", "value"));
-    $("#incomeInput").change(function() {
-        $("#sliderIncome").slider("value", $(this).val());
-    });
-    $("#sliderInvest").slider({
-        range: "min",
-        animate: true,
-        value: 100000,
-        min: 0,
-        max: 400000,
-        step: 1000,
-        slide: function(event, ui) {
-            let debtValue = ui.value;
-            debtValue = numberWithCommas(debtValue);
-            $("#investInput").val(debtValue);
-        },
-    });
-    $("#investInput").val($("#sliderInvest").slider("option", "value"));
-    $("#investInput").change(function() {
-        $("#sliderInvest").slider("value", $(this).val());
-    });
+    // $("#debtInput").val($("#sliderDebt").slider("option", "value"));
+    // $("#debtInput").change(function() {
+    //     $("#sliderDebt").slider("value", $(this).val());
+    // });
+    // $("#sliderTime").slider({
+    //     range: "min",
+    //     animate: true,
+    //     value: 3,
+    //     min: 1,
+    //     max: 8,
+    //     step: 1,
+    //     slide: function(event, ui) {
+    //         let timeValue = ui.value;
+    //         switch (timeValue) {
+    //             case 1:
+    //                 timeValue = `${timeValue} год`;
+    //                 break;
+    //             case 2:
+    //                 timeValue = `${timeValue} года`;
+    //                 break;
+    //             case 3:
+    //                 timeValue = `${timeValue} года`;
+    //                 break;
+    //             case 4:
+    //                 timeValue = `${timeValue} года`;
+    //                 break;
+    //             default:
+    //                 timeValue = `${timeValue} лет`;
+    //         }
+    //         $("#timeInput").val(timeValue);
+    //     },
+    // });
+    // $("#timeInput").val($("#sliderTime").slider("option", "value"));
+    // let timeValue = $("#timeInput").val();
+    // switch (timeValue) {
+    //     default: timeValue = `${timeValue} года`;
+    // }
+    // $("#timeInput").val(timeValue);
+    // $("#timeInput").change(function() {
+    //     $("#sliderTime").slider("value", $(this).val());
+    // });
+    // $("#sliderIncome").slider({
+    //     range: "min",
+    //     animate: true,
+    //     value: 30000,
+    //     min: 10000,
+    //     max: 500000,
+    //     step: 5000,
+    //     slide: function(event, ui) {
+    //         let debtValue = ui.value;
+    //         debtValue = numberWithCommas(debtValue);
+    //         $("#incomeInput").val(debtValue);
+    //     },
+    // });
+    // $("#incomeInput").val($("#sliderIncome").slider("option", "value"));
+    // $("#incomeInput").change(function() {
+    //     $("#sliderIncome").slider("value", $(this).val());
+    // });
+    // $("#sliderInvest").slider({
+    //     range: "min",
+    //     animate: true,
+    //     value: 100000,
+    //     min: 0,
+    //     max: 400000,
+    //     step: 1000,
+    //     slide: function(event, ui) {
+    //         let debtValue = ui.value;
+    //         debtValue = numberWithCommas(debtValue);
+    //         $("#investInput").val(debtValue);
+    //     },
+    // });
+    // $("#investInput").val($("#sliderInvest").slider("option", "value"));
+    // $("#investInput").change(function() {
+    //     $("#sliderInvest").slider("value", $(this).val());
+    // });
 });
