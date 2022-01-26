@@ -24,7 +24,29 @@ html(lang="en")
                 img(src="./assets/images/content/vk.svg").header-icon
                 img(src="./assets/images/content/whatapp.svg").header-icon
                 img(src="./assets/images/content/viber.svg").header-icon
-
+        .header-btn--mobile
+            .addon-container#showMenu
+                span.btn-pattern--line#firstLineMobile 
+                span.btn-pattern--line#secondLineMobile 
+            .header-layer--mobile#headerLayer
+                .header-menu--mobile
+                    .mobile__container
+                        .mobile__logo 
+                            img(src="./assets/images/content/logo2.svg", alt="") 
+                        .mobile__city-chosen Иркутск
+                    .mobile__navigation
+                        a.header-link(href="#form") Оформить кредит
+                        a.header-link(href="#") Клиенту
+                        a.header-link(href="#") О Компании
+                        a.header-link(href="#contacts") Контакты 
+                    .mobile__separator-line 
+                    .header-contact-info
+                        a.header-phone(href="tel:+78006002515") 8 800 600-25-15 
+                        .header-social 
+                            img(src="./assets/images/content/instagram.svg").header-icon
+                            img(src="./assets/images/content/vk.svg").header-icon
+                            img(src="./assets/images/content/whatapp.svg").header-icon
+                            img(src="./assets/images/content/viber.svg").header-icon
         main.main
             .greeting-basic
                 .swiper.greeting-swiper#greetingSwipper

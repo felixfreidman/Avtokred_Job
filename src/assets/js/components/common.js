@@ -238,15 +238,15 @@ function numberWithCommas(x) {
 
 // // ========================================= БОЛЬШАЯ СЕКЦИЯ МЕНЮ
 // // МОБИЛЬНОЕ МЕНЮ =========================================
-// const mobileHeaderBtn = document.getElementById("showMenu");
-// const mobileHeaderLayer = document.getElementById("headerLayer");
-// mobileHeaderBtn.addEventListener("click", toggleHeaderMenu);
-// mobileHeaderLayer.addEventListener("click", toggleHeaderMenu);
+const mobileHeaderBtn = document.getElementById("showMenu");
+const mobileHeaderLayer = document.getElementById("headerLayer");
+mobileHeaderBtn.addEventListener("click", toggleHeaderMenu);
+mobileHeaderLayer.addEventListener("click", toggleHeaderMenu);
 
-// function toggleHeaderMenu() {
-//     mobileHeaderLayer.classList.toggle("btn-clicked--show");
-//     mobileHeaderBtn.classList.toggle("header-btn--clicked");
-// }
+function toggleHeaderMenu() {
+    mobileHeaderLayer.classList.toggle("btn-clicked--show");
+    mobileHeaderBtn.classList.toggle("header-btn--clicked");
+}
 // // ========================================= МОБИЛЬНОЕ МЕНЮ
 
 // /*

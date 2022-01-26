@@ -1024,13 +1024,13 @@ html {
     .attention-container__header {
         // color: #0b1f35;
         color: #b20a2c;
-        font-size: 32px;
+        font-size: 48px;
         font-weight: 700;
     }
     .attention-container-row {
         display: flex;
         justify-content: flex-start;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     .attention-container__button--expand {
         background-color: rgba(11, 31, 53, .1);
@@ -1308,5 +1308,449 @@ html {
     }
     &--more {
         background-color: rgba($color: #0b1f35, $alpha: .7);
+    }
+}
+
+// Mobile Header 
+.header-btn--mobile {
+    width: 80px;
+    height: 40px;
+    background-color: #b20a2c;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40px;
+    z-index: 1000;
+    right: 25px;
+    .addon-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .btn-pattern--line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s ease;
+    }
+}
+
+.header-btn--clicked {
+    z-index: 1000;
+    .addon-container {
+        position: relative;
+    }
+    #firstLineMobile {
+        position: absolute;
+        transform: rotate(45deg);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #secondLineMobile {
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+.header-layer--mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    .header-menu--mobile {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-start;
+        width: calc(60% - 20px);
+        height: calc(100vh - 40px);
+        padding: 20px 10px;
+        background-color: #fff;
+        transform: translateX(100vw);
+        transition: all 0.3s ease;
+        flex-direction: column;
+        .mobile__container {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .mobile__logo {
+                width: 40%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .mobile__city-chosen {
+                font-weight: 700;
+                font-size: 32px;
+                color: #b20a2c;
+            }
+        }
+        .mobile__navigation {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .header-link {
+                text-decoration: none;
+                color: #000;
+                font-weight: 600;
+                font-size: 24px;
+                margin-bottom: 15px;
+                &:hover {
+                    color: #b20a2c
+                }
+            }
+        }
+        .mobile__separator-line {
+            margin-top: 50px;
+            width: 60vw;
+            height: 3px;
+            background-color: #b20a2c;
+            margin-bottom: 50px;
+            position: relative;
+            right: 10px;
+        }
+        .header-contact-info {
+            display: flex;
+            align-items: center;
+            .header-phone {
+                font-weight: 600;
+                font-size: 24px;
+                margin-right: 25px;
+                color: #b20a2c;
+            }
+            .header-social {
+                display: flex;
+                a {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+}
+
+.btn-clicked--show {
+    display: flex !important;
+    .header-menu--mobile {
+        transform: translateX(0) !important;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .main-calculator__controller {
+        width: 65%;
+    }
+    .main-calculator__result {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .main-calculator__controller {
+        width: 65%;
+    }
+    .main-calculator__result {
+        width: 25%;
+        padding: 20px;
+    }
+    .header-link {
+        font-size: 17px;
+    }
+    .swiper-pagination.home-pagination {
+        width: 90%;
+    }
+    .main-form {
+        background: url("./assets/images/content/phoneHand.png") 109% 300% / 30% no-repeat, url("./assets/images/content/car.png") 95% 50% / 35% no-repeat, url("./assets/images/content/arrow.svg") -5% 50% / 80% no-repeat;
+    }
+    .main-calculator__title {
+        font-size: 32px;
+    }
+    .main-banks__title {
+        font-size: 32px;
+    }
+    .main-calculator .controller-radio .controller-label {
+        font-size: 16px;
+        margin-right: 15px;
+        padding: 15px 5px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header-phone {
+        font-size: 36px;
+        margin-right: auto;
+    }
+    .header-btn--mobile {
+        display: flex;
+    }
+    .header-navigation {
+        display: none;
+    }
+    .header-socials {
+        display: none;
+    }
+    .main-form {
+        height: 400px;
+        background: url("./assets/images/content/phoneHand.png") 112% 100% / 30% no-repeat, url("./assets/images/content/car.png") 95% 50% / 35% no-repeat, url("./assets/images/content/arrow.svg") -5% 50% / 80% no-repeat;
+    }
+    .main-banks {
+        height: 350px;
+    }
+    .main-calculator__result .result-box__caption {
+        font-size: 13px;
+    }
+    .controller-label {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .main-calculator__content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .main-calculator__controller {
+        width: 100%;
+    }
+    .main-calculator__result {
+        width: 100%;
+    }
+    .main-calculator__result .result-box__caption {
+        font-size: 20px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active .bullet-header {
+        font-size: 18px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet .bullet-header {
+        font-size: 18px;
+    }
+    .swiper-pagination.home-pagination {
+        width: 100%;
+    }
+    .greeting-basic {
+        background-position: 30% 50%;
+    }
+    .greeting-slide .attention-container {
+        width: 55%;
+    }
+    .main-form {
+        height: 400px;
+        background: url("./assets/images/content/phoneHand.png") 123% 100% / 40% no-repeat, url("./assets/images/content/car.png") 95% 50% / 35% no-repeat, url("./assets/images/content/arrow.svg") -5% 50% / 80% no-repeat;
+    }
+    .main-form__title {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .greeting-slide .attention-container__header {
+        font-size: 28px;
+    }
+    .greeting-slide .attention-container {
+        width: 60%;
+    }
+    .btn-template {
+        font-size: 14px;
+    }
+    .greeting-basic {
+        height: 80vh;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet .bullet-header,
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active .bullet-header {
+        font-size: 14px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet {
+        height: 90px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active::after,
+    .swiper-pagination.home-pagination .swiper-pagination-bullet::after {
+        width: 10px;
+        height: 10px;
+        top: -5px;
+    }
+    .header-phone {
+        font-size: 22px;
+    }
+    .main-form {
+        height: 200px;
+        background: url("./assets/images/content/car.png") no-repeat;
+        background-size: contain;
+        background-position: -100% 50%;
+        justify-content: space-between;
+    }
+    .main-form__title {
+        color: #b20a2c;
+        align-self: flex-end;
+        font-size: 22px;
+        margin-right: 15px;
+    }
+    .main-form__btn {
+        font-size: 18px;
+    }
+    .main-banks__title,
+    .main-calculator__title {
+        font-size: 22px;
+    }
+    .main-banks__title {
+        padding-top: 40px;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header-phone {
+        display: none;
+    }
+    .header-contact-info {
+        flex-direction: column !important;
+        align-items: start !important;
+        .header-phone {
+            font-size: 26px !important;
+            color: #b20a2c !important;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    .greeting-slide {
+        margin-left: 30px;
+    }
+    .greeting-slide .attention-container {
+        width: 90%;
+    }
+    .btn-template,
+    .swiper-pagination.home-pagination .swiper-pagination-bullet .bullet-header,
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active .bullet-header {
+        font-size: 12px;
+        width: 95%;
+    }
+    .main-form {
+        background-position: -180px 50%;
+        justify-content: space-between;
+        padding-left: 30px;
+        width: calc(100% - 30px);
+        position: relative;
+    }
+    .main-form__title {
+        background-color: #fff;
+        width: calc(100% - 30px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0 10px 30px;
+    }
+    .main-form__btn {
+        font-size: 13px;
+    }
+    .main-calculator {
+        padding: 30px;
+        width: calc(100% - 60px);
+    }
+    .main-calculator__result {
+        width: 90%;
+    }
+    .greeting-slide .attention-container-row {
+        width: 100%;
+    }
+    .btn-template {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-layer--mobile .header-menu--mobile {
+        width: calc(80% - 20px);
+    }
+    .header-layer--mobile .header-menu--mobile .mobile__separator-line {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .main-calculator__controller .slider-container .ui-slider-horizontal {
+        height: 50px;
+    }
+    .main-banks__title,
+    .main-calculator__title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .main-calculator__controller .controller-title {
+        font-size: 16px;
+    }
+    .main-calculator__controller .slider-caption .slider-caption__value {
+        font-size: 15px;
+    }
+    .main-calculator__controller .slider-container {
+        height: 60px;
+    }
+    .main-form__btn {
+        padding: 20px 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .btn-template {
+        padding: 15px !important;
+        font-size: 10px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet .bullet-header,
+    .swiper-pagination.home-pagination .swiper-pagination-bullet-active .bullet-header {
+        font-size: 8px;
+    }
+    .swiper-pagination.home-pagination .swiper-pagination-bullet {
+        height: 45px;
+    }
+    .main-form__btn {
+        font-size: 10px;
+        font-weight: 700;
+    }
+    .main-calculator .controller-radio .controller-label {
+        min-width: 70px;
+        font-size: 13px;
+        padding: 10px 0;
+    }
+    .main-calculator .controller-radio {
+        margin-bottom: 0;
+    }
+    .main-calculator__result .result-box__caption {
+        font-size: 16px;
+    }
+    .header-layer--mobile .header-menu--mobile .mobile__navigation .header-link {
+        font-size: 18px;
+    }
+    .header-layer--mobile .header-menu--mobile .mobile__container .mobile__city-chosen {
+        font-size: 24px;
+    }
+    .greeting-basic {
+        background-position: 18% 50%;
     }
 }
